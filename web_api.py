@@ -20,7 +20,7 @@ def load_historical_data(d1=datetime.datetime(2018,2,3), d2 = datetime.datetime(
 	print (isocal_to_dt(d2_isocal))
 	
 def load_week(dt_start, region='sa1'):	
-	filename = "{0}_{1}.csv".format(region,dt_start)
+	filename = "{0}_{1}.csv".format(region,dt_start.strftime("%Y%m%d"))
 	filepath = os.path.join(data_dir,filename)
 	if os.path.exists(filepath):	
 		return pd.read_csv(filepath,index_col=0,parse_dates=[0])
