@@ -18,5 +18,5 @@ Developed by:
 * simon holmes à court ([@simonahac](https://twitter.com/simonahac))
 * Steven Tan ([@chienleng](https://twitter.com/chienleng)) 
 
-###License
+### License
 OpenNEMpy is MIT licensed.
