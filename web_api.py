@@ -6,6 +6,8 @@ import datetime
 import os
 
 data_dir = config.get("local_settings",'data_dir')
+if not os.path.exists(os.path.join(data_dir,"power")):
+	os.mkdir(os.path.join(data_dir,"power"))
 
 def live_data(region="sa1"):
 	#returns latest (live) data for a region (previous week)
