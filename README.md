@@ -8,7 +8,7 @@ This is a python3 package that requires `pandas`, `requests` and `simplejson`.  
 There are two main modules `web_api` and `sql_api` that access the data (via web or mysql database respectively), save the data local and return a `pandas` dataframe (or two dataframes).  The directory for saving data in should be needs to be saved in a file name `config.ini` (see `config_example.ini` to see the config requirements).
 
 Here is a small example:
-```
+```python
 from opennempy import web_api
 df_5, df_30 = web_api.load_data(d1 = datetime.datetime(2018,3,4), 
                                 d2 = datetime.datetime(2018,4,19), 
