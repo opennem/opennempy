@@ -16,7 +16,7 @@ df_5, df_30 = web_api.load_data(d1 = datetime.datetime(2018,3,4),
 ```
 This will download, save the data as a csv in the directed lists in the config file, and return two data frames (containing data at a 5 minute and 30 minute resolution respectively). A single data fram containing all the data can also be obtained (by specifing the kwarg `split=False`). 
 
-See the [jupter notebook](https://github.com/dylanjmcconnell/opennempy/blob/master/example.ipynb) for simple use case. 
+See the [jupter notebook](https://github.com/dylanjmcconnell/opennempy/blob/master/docs/example.ipynb) for simple use case. 
 
 ## OpenNEM: an open platform for National Electricity Market Data
 The **OpenNEM project** aims to make the wealth of public **National Electricity Market (NEM)** data more accessible to a wider audience.
