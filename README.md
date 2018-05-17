@@ -3,7 +3,7 @@ python based access to the openNEM platform for National Electricity Market Data
 
 * For the front end repository, see here: [opennem-fe](https://github.com/chienleng/opennem-fe)
 
-This is a python3 package that requires `pandas`, `requests` and `simplejson`.  To use this package clone the repository and add the directory to your $PYTHONPATH  (or clone it to a directory that is in your python path).  
+This python package requires `pandas`, `requests` and `simplejson`.  To use this package clone the repository and add the directory to your $PYTHONPATH  (or clone it to a directory that is in your python path).  Currently works in both python 2 and python 3 (but is being maintained and developed with python 3)
 
 There are two main modules `web_api` and `sql_api` that access the data (via web or mysql database respectively), save the data local and return a `pandas` dataframe (or two dataframes).  The directory for saving data in should be needs to be saved in a file name `config.ini` (see `config_example.ini` to see the config requirements).
 
