@@ -1,5 +1,6 @@
 # opennempy
-python based access to the openNEM platform for National Electricity Market Data http://opennem.org.au
+python based access to the openNEM platform for National Electricity Market Data
+ [http://opennem.org.au](http://opennem.org.au)
 
 * For the front end repository, see here: [opennem-fe](https://github.com/chienleng/opennem-fe)
 
