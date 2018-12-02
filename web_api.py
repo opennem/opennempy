@@ -80,7 +80,7 @@ def download_week(dt_start, region='sa1'):
 	r = requests.get(url)
 	log.info('got ' + str(len(r.content)) + 'bytes')
 	log.info('repsonse code ' + str(r.status_code))
-	if r.status_code == '404':
+	if str(r.status_code) == '404':
 		log.error('that\'s a 404 on ' + url)
 		return pd.DataFrame() # empty df
 	try:
