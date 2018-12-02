@@ -4,6 +4,9 @@ import simplejson
 import pandas as pd
 import datetime
 import os
+import logging
+
+log = logging.getLogger()
 
 data_dir = config.get("local_settings",'data_dir')
 if not os.path.exists(os.path.join(data_dir,"power")):
@@ -53,21 +56,42 @@ def load_week(dt_start, region='sa1'):
 	filename = "{0}_{1}.csv".format(region,dt_start.strftime("%Y%m%d"))
 	folder = "power"
 	filepath = os.path.join(data_dir,"power",filename)
-	
-	if os.path.exists(filepath):	
-		return pd.read_csv(filepath,index_col=0,parse_dates=[0])
+
+	if os.path.exists(filepath):
+		log.info('reading cache: ' + filepath)
+		df = pd.read_csv(filepath,index_col=0,parse_dates=[0])
 	else:
 		df = download_week(dt_start, region=region)
-		df.to_csv(filepath)
-		return df
+		if len(df): # don't save empty df
+			df.to_csv(filepath)
+	rows = len(df)
+	msg = filename + ' contains ' + str(rows) + ' rows'
+	if rows != 2016:
+		log.error(msg)
+	else:
+		log.info(msg)
+	return df
 
 def download_week(dt_start, region='sa1'):
 	#downloads a specfic week from a specific region
 	iso_week = dt_to_isocal(dt_start)
 	url = "http://data.opennem.org.au/power/history/5minute/{0}_{1}.json".format(region,iso_week)
+	log.debug('fetching: ' + url)
 	r = requests.get(url)
-	return 	merge_series(r)
-	
+	log.info('got ' + str(len(r.content)) + 'bytes')
+	log.info('repsonse code ' + str(r.status_code))
+	if str(r.status_code) == '404':
+		log.error('that\'s a 404 on ' + url)
+		return pd.DataFrame() # empty df
+	try:
+		m = merge_series(r)
+	except Exception as err:
+		log.error('failed merging:\n' + str(r.content))
+		log.info(type(err))
+		log.info(err)
+		m = pd.DataFrame()
+	return m
+
 def merge_series(r):
 	#merges list of series in a dataframe (recombines interchange and battery fields)
 	df = pd.concat([json_to_pd(data_set) for data_set in data_sets(r)], axis=1)	
