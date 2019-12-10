@@ -15,7 +15,7 @@ ntndp = {'Broken Hill Gas Turbines': 0.93,
          'Eraring Power Station': 0.88,
          'Jeeralang "B" Power Station': 0.76,
          'Lonsdale Power Station': 1.04,
-	 'Swanbank E Gas Turbine': 0.36,
+         'Swanbank E Gas Turbine': 0.36,
          'Tarong Power Station': 0.84,
          'Tarong North Power Station': 0.8,
          'Tamar Valley Combined Cycled Power Station': 0.37,
@@ -34,16 +34,18 @@ argparser.add_argument('-n', type=str, default='NGERS - Designated generation fa
 argparser.add_argument('-p', type=str, default='http://pv-map.apvi.org.au/api/v1/data/today.json?access_token=%s' % access_token)
 args = argparser.parse_args()
 
-def apvi(url):
-  urlobj = urllib2.urlopen(url)
-  data = json.load(urlobj)
-  output = data['output'][-2]
 
-  ts = pd.Timestamp(output['ts'])
-  now = pd.Timestamp(pd.datetime.utcnow()).tz_localize('UTC')
-  delta = pd.Timedelta(minutes=30)
-  assert (now - ts) < delta, "APVI data is stale"
-  return output
+def apvi(url):
+    """Fetch APVI data."""
+    urlobj = urllib2.urlopen(url)
+    data = json.load(urlobj)
+    output = data['output'][-2]
+
+    ts = pd.Timestamp(output['ts'])
+    now = pd.Timestamp(pd.datetime.utcnow()).tz_localize('UTC')
+    delta = pd.Timedelta(minutes=30)
+    assert (now - ts) < delta, "APVI data is stale"
+    return output
 
 
 nger = pd.read_csv(args.n, sep=',')
@@ -81,7 +83,7 @@ for rgn in ['NSW1', 'QLD1', 'SA1', 'TAS1', 'VIC1', 'ALL']:
         else:
             selected = nger[np.logical_and(np.isclose(nger['Latitude'], lat),
                                            np.isclose(nger['Longitude'], lon))]
-            if len(selected) == 0:
+            if not selected:
                 print >>sys.stderr, 'Not matched', station_name, lat, lon
                 continue
             elif len(selected) > 1:
