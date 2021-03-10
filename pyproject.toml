@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "opennempy"
-version = "3.6.0-alpha.1"
+name = "opennem"
+version = "3.6.1-alpha.2"
 description = "OpenNEM Australian Energy Data Python Client"
 authors = ["Dylan McConnell <dylan.mcconnell@unimelb.edu.au>", "Nik Cubrilovic <nik@infotorch.org>"]
 license = "MIT"
@@ -15,7 +15,6 @@ keywords = ["opennem", "analysis", "australia"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Environment :: Console",
-  "Framework :: Scrapy",
   "License :: OSI Approved :: MIT License",
 ]
 
