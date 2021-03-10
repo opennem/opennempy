@@ -4,3 +4,4 @@ config.ini
 build/
 dist/.pytest_cache/
 *.log
+dist/
