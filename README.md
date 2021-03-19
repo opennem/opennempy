@@ -12,6 +12,7 @@ Currently supports:
 
 - Australia NEM: https://www.nemweb.com.au/
 - Australia WEM (West Australia): http://data.wa.aemo.com.au/
+- APVI rooftop solar data for Australia
 
 ## Requirements
 
@@ -20,25 +21,10 @@ Currently supports:
 
 ## Quickstart
 
-With poetry:
-
 ```sh
-$ poetry install
-$ source .venv/bin/activate
+$ pip install opennem
 ```
 
-With pip + venv:
-
-```sh
-$ pip -m venv .venv
-$ pip install -r requirements.txt
-$ source .venv/bin/activate
 ```
-
-## Install
-
-You can install this project with python `pip`:
-
-```sh
-$ pip install opennempy
+>>> import opennem
 ```
