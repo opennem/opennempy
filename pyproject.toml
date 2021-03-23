@@ -48,6 +48,7 @@ pycodestyle = "^2.6.0"
 py-spy = "^0.3.3"
 pytest-benchmark = {extras = ["histogram"], version = "^3.2.3"}
 pdbpp = "^0.10.2"
+pytest-sugar = "^0.9.4"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
