@@ -1,6 +1,6 @@
 # OpenNEM Energy Market Data Access
 
-![Tests](https://github.com/opennem/opennempy/workflows/Tests/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/opennem) ![Tests](https://github.com/opennem/opennempy/workflows/Tests/badge.svg) ![PyPI - License](https://img.shields.io/pypi/l/opennem)
 
 The OpenNEM project aims to make the wealth of public National Electricity Market (NEM) data more accessible to a wider audience.
 
