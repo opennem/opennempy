@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from datetime import datetime
 from typing import List, Optional, Tuple
 
@@ -98,7 +100,7 @@ class OpennemDataSet(BaseConfig):
 
     def get_by_stat_type(self, stat_type: StatType) -> OpennemDataSet:
         em = self.copy()
-        em.resources = list(filter(lambda s: s.stat_type == stat_type, self.resources))
+        em.data = list(filter(lambda s: s.stat_type == stat_type, self.resources))
         return em
 
     def get_by_network_id(
@@ -106,7 +108,7 @@ class OpennemDataSet(BaseConfig):
         network_id: str,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.resources = list(filter(lambda s: s.network.code == network_id, self.resources))
+        em.data = list(filter(lambda s: s.network.code == network_id, self.resources))
         return em
 
     def get_by_network_region(
@@ -114,7 +116,7 @@ class OpennemDataSet(BaseConfig):
         network_region: str,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.resources = list(filter(lambda s: s.network_region == network_region, self.resources))
+        em.data = list(filter(lambda s: s.network_region == network_region, self.resources))
         return em
 
     def get_by_year(
@@ -122,7 +124,7 @@ class OpennemDataSet(BaseConfig):
         year: int,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.resources = list(filter(lambda s: s.year == year, self.resources))
+        em.data = list(filter(lambda s: s.year == year, self.resources))
         return em
 
     def get_by_years(
@@ -130,5 +132,5 @@ class OpennemDataSet(BaseConfig):
         years: List[int],
     ) -> OpennemDataSet:
         em = self.copy()
-        em.resources = list(filter(lambda s: s.year in years, self.resources))
+        em.data = list(filter(lambda s: s.year in years, self.resources))
         return em
