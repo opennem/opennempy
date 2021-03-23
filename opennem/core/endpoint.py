@@ -1,6 +1,5 @@
 from enum import Enum
-from os import environ
-from urllib.parse import ParseResult, urlparse
+from urllib.parse import urlparse
 
 from opennem.schema.envs import Environment
 from opennem.settings import settings
