@@ -33,6 +33,6 @@ def delta_from_human_interval(interval_human: str) -> relativedelta:
     assert value > 0, f"Not a valid number of intervals: {value}"
 
     if unit in TIME_INTERVALS.keys():
-        return relativedelta(**{TIME_INTERVALS[unit]: value})
+        return relativedelta(**{TIME_INTERVALS[unit]: value})  # type: ignore
 
     raise Exception("Not a valid interval: {}".format(interval_human))
