@@ -19,6 +19,8 @@
   "python.linting.pylintEnabled": true,
   "python.linting.pylintPath": ".venv/bin/pylint",
   "python.linting.pycodestyleEnabled": true,
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pydocstylePath": ".venv/bin/pydocstyle",
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": ".venv/bin/mypy",
   "python.linting.flake8Enabled": true,
