@@ -7,7 +7,7 @@ from opennem.schema.envs import Environment
 @pytest.mark.parametrize(
     ["environment_name", "environment_expected"],
     [
-        ("local", Environment.development),
+        ("local", Environment.local),
         ("dev", Environment.development),
         ("staging", Environment.staging),
         ("prod", Environment.production),
