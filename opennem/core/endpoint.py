@@ -12,9 +12,11 @@ class EndpointType(Enum):
     data = "data"
 
 
-def get_opennem_endpoint(endpoint_type: EndpointType, environment: Environment) -> str:
+def get_opennem_endpoint(
+    endpoint_type: EndpointType, environment: Environment, skip_env: bool = False
+) -> str:
     """ Replace environment in URL """
-    if settings.endpoint:
+    if settings.endpoint and not skip_env:
         return settings.endpoint
 
     url = urlparse(_OPENNEM_BASE_ENDPOINT)

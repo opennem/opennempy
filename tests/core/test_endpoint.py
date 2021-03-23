@@ -18,5 +18,5 @@ from opennem.schema.envs import Environment
 def test_get_opennem_endpoint(
     endpoint_type: EndpointType, environment: Environment, url_expected: str
 ) -> None:
-    url_subject = get_opennem_endpoint(endpoint_type, environment)
+    url_subject = get_opennem_endpoint(endpoint_type, environment, skip_env=True)
     assert url_subject == url_expected, "Got the expected url"
