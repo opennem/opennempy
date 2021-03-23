@@ -9,7 +9,10 @@ def get_environment(environment_name: str) -> Environment:
     """ Returns an environment type definition from a string environment name """
     en = environment_name.strip().lower()
 
-    if en in ["dev", "development", "local"]:
+    if en in ["local"]:
+        return Environment.local
+
+    if en in ["dev", "development"]:
         return Environment.development
 
     if en in ["stage", "staging"]:
