@@ -9,6 +9,8 @@ SUPPORTED_LOG_LEVEL_NAMES = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
 class OpennemSettings(BaseSettings):
     env: str = "development"
 
+    endpoint: Optional[str]
+
     log_level: str = "DEBUG"
 
     requests_cache_path: str = ".requests"
@@ -44,3 +46,10 @@ class OpennemSettings(BaseSettings):
         if self.env in ["development", "staging"]:
             return True
         return False
+
+    class Config:
+        fields = {
+            "env": {"env": "ENV"},
+            "endpoint": {"env": "OPENNEM_API_ENDPOINT"},
+            "log_level": {"env": "LOG_LEVEL"},
+        }
