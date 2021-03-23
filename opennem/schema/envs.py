@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Environment(Enum):
-    development = "development"
+    local = "local"
+    development = "dev"
     staging = "staging"
     production = "production"
