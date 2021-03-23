@@ -52,6 +52,7 @@ pytest-sugar = "^0.9.4"
 Sphinx = "^3.5.3"
 myst-parser = "^0.13.5"
 pydocstyle = "^6.0.0"
+sphinx-autobuild = "^2021.3.14"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
