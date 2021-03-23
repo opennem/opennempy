@@ -6,3 +6,5 @@ dist/.pytest_cache/
 *.log
 dist/
 bin/
+.env
+.env.*
