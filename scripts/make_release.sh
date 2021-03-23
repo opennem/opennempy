@@ -10,9 +10,13 @@ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statist
 # mypy
 # mypy opennem
 
+
 poetry version ${1-prerelease}
 
 VERSION=$(poetry version | sed 's/opennem\ //g')
+
+# Make docs
+make github
 
 echo "Building version $VERSION"
 
