@@ -15,6 +15,8 @@ warnings.filterwarnings("ignore", category=DeprecationWarning, module="twisted")
 PATH_OPENNEM = Path(__file__).parent
 PATH_CWD = Path.cwd()
 
-from opennem.settings import settings
+from opennem.settings import settings  # noqa
 
-from .client import OpenNEMClient  # noqa: E402
+from .client import OpenNEMClient  # noqa
+
+api = OpenNEMClient()
