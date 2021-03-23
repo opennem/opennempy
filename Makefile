@@ -23,3 +23,5 @@ help:
 github:
 	@make html
 	@cp -a $(BUILDDIR)/html/. $(GITHUBOUT)
+	@git add docs/
+	@git ci -m "AUTO: builddocs"
