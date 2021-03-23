@@ -22,3 +22,14 @@ class NetworkSchema(BaseConfig):
     regions: Optional[List[NetworkRegionSchema]]
     timezone: Optional[str] = Field(None, description="Network timezone")
     interval_size: int = Field(..., description="Size of network interval in minutes")
+
+
+class FueltechSchema(BaseConfig):
+    code: str
+    label: str
+    renewable: bool
+
+
+class FacilityStatusSchema(BaseConfig):
+    code: str
+    label: str
