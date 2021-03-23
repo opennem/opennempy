@@ -35,9 +35,12 @@ class OpenNEMClient(object):
         self._base_url_parsed = urlparse(self.base_url)
 
     def _get_endpoint(self, endpoint: str) -> str:
+        """ Gets the endpoint url path """
         return self._base_url_parsed._replace(path=endpoint).geturl()
 
     def _get(self, endpoint: str, params: Optional[Dict] = None) -> Union[Dict, List]:
+        """ Performs a get request to an endpoint optionally with parameters for querystring """
+
         url = self._get_endpoint(endpoint)
         resp = http.get(url, params=params)
 
