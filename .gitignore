@@ -8,3 +8,4 @@ dist/
 bin/
 .env
 .env.*
+_build/

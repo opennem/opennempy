@@ -1,1 +1,0 @@
-# OpenNEM Python Client Library
