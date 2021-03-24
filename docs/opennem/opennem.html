@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>opennem package &#8212; OpenNEM  documentation</title>
+    <title>OpenNEM Package &#8212; OpenNEM  documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="opennem.core package" href="opennem.core.html" />
-    <link rel="prev" title="Getting Started" href="../quickstart.html" />
+    <link rel="prev" title="Fueltechs" href="../fueltechs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -64,9 +64,27 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../introduction.html">
+  Introduction
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../networks.html">
+  Network Definitions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../fueltechs.html">
+  Fueltechs
+ </a>
+</li>
+
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
-  opennem package
+  OpenNEM Package
  </a>
 </li>
 
@@ -197,7 +215,7 @@
               <div>
                 
   <div class="section" id="opennem-package">
-<h1>opennem package<a class="headerlink" href="#opennem-package" title="Permalink to this headline">¶</a></h1>
+<h1>OpenNEM Package<a class="headerlink" href="#opennem-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -252,17 +270,18 @@
 </div>
 <div class="section" id="module-opennem.client">
 <span id="opennem-client-module"></span><h2>opennem.client module<a class="headerlink" href="#module-opennem.client" title="Permalink to this headline">¶</a></h2>
-<p>OpenNEM API Client Library</p>
+<p>OpenNEM API Client Library.</p>
+<p>Define the primary API client class for accessing API and data methods of OpenNEM.</p>
 <dl class="py class">
 <dt id="opennem.client.OpenNEMClient">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.client.</span></code><code class="sig-name descname"><span class="pre">OpenNEMClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.client.OpenNEMClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>OpenNEM Core API Client</p>
-<dl class="py attribute">
-<dt id="opennem.client.OpenNEMClient.base_url">
-<code class="sig-name descname"><span class="pre">base_url</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.client.OpenNEMClient.base_url" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>OpenNEM Core API Client.</p>
+<p>Access API endpoints with an instance of the API client</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">&gt;&gt;&gt;</span> <span class="pre">client</span> <span class="pre">=</span> <span class="pre">OpenNEMClient()</span>
+<span class="pre">&gt;&gt;&gt;</span> <span class="pre">networks</span> <span class="pre">=</span> <span class="pre">client.networks()</span>
+<span class="pre">`</span></code></p>
 <dl class="py method">
 <dt id="opennem.client.OpenNEMClient.fueltechs">
 <code class="sig-name descname"><span class="pre">fueltechs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.FueltechSchema" title="opennem.schema.network.FueltechSchema"><span class="pre">opennem.schema.network.FueltechSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.fueltechs" title="Permalink to this definition">¶</a></dt>
@@ -271,7 +290,7 @@
 
 <dl class="py method">
 <dt id="opennem.client.OpenNEMClient.network_regions">
-<code class="sig-name descname"><span class="pre">network_regions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.NetworkSchema" title="opennem.schema.network.NetworkSchema"><span class="pre">opennem.schema.network.NetworkSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.network_regions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">network_regions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.NetworkRegionSchema" title="opennem.schema.network.NetworkRegionSchema"><span class="pre">opennem.schema.network.NetworkRegionSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.network_regions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return network regions.</p>
 </dd></dl>
 
@@ -285,7 +304,7 @@
 
 <dl class="py class">
 <dt id="opennem.client.OpenNEMStats">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.client.</span></code><code class="sig-name descname"><span class="pre">OpenNEMStats</span></code><a class="headerlink" href="#opennem.client.OpenNEMStats" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.client.</span></code><code class="sig-name descname"><span class="pre">OpenNEMStats</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opennem_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.client.OpenNEMStats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>OpenNEM Stats Client.</p>
 </dd></dl>
@@ -293,6 +312,7 @@
 </div>
 <div class="section" id="module-opennem">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opennem" title="Permalink to this headline">¶</a></h2>
+<p>OpenNEM Python Client Library</p>
 </div>
 </div>
 
@@ -302,7 +322,7 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../quickstart.html" title="previous page">Getting Started</a>
+    <a class='left-prev' id="prev-link" href="../fueltechs.html" title="previous page">Fueltechs</a>
     <a class='right-next' id="next-link" href="opennem.core.html" title="next page">opennem.core package</a>
 
               </div>

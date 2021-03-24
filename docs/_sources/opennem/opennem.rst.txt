@@ -1,4 +1,4 @@
-opennem package
+OpenNEM Package
 ===============
 
 Subpackages

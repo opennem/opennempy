@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; OpenNEM  documentation</title>
+    <title>Fueltechs &#8212; OpenNEM  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -27,20 +27,16 @@
     
   <link rel="preload" as="script" href="_static/js/index.1e043a052b0af929e4d8.js">
 
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OpenNEM Package" href="opennem/opennem.html" />
+    <link rel="prev" title="Network Definitions" href="networks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -80,8 +76,8 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="fueltechs.html">
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
   Fueltechs
  </a>
 </li>
@@ -133,7 +129,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="#" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
@@ -149,9 +145,24 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fields">
+   Fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exmples">
+   Exmples
+  </a>
+ </li>
+</ul>
+
 </nav>
 
 
@@ -167,33 +178,40 @@
               
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="fueltechs">
+<h1>Fueltechs<a class="headerlink" href="#fueltechs" title="Permalink to this headline">¶</a></h1>
+<p>Defines the primary fuel source for each facility energy or grouping in stats outputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FueltechSchema</span><span class="p">():</span>
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">renewable</span><span class="p">:</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> - a unique idenfifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code> - human readable label for the fueltech for display</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">renewable</span></code> - if the fueltech is classed as renewable</p></li>
+</ul>
+</div>
+<div class="section" id="exmples">
+<h2>Exmples<a class="headerlink" href="#exmples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">fueltechs</span><span class="p">()</span>
+<span class="go">FueltechSchema(code=&#39;coal_brown&#39;, label=&#39;Coal (Brown)&#39;, renewable=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
 
               </div>
               
               
               <div class='prev-next-bottom'>
                 
+    <a class='left-prev' id="prev-link" href="networks.html" title="previous page">Network Definitions</a>
+    <a class='right-next' id="next-link" href="opennem/opennem.html" title="next page">OpenNEM Package</a>
 
               </div>
               

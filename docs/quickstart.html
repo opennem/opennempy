@@ -33,7 +33,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="opennem package" href="opennem/opennem.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
     <link rel="prev" title="OpenNEM Developer Documentation" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -65,8 +65,26 @@
 </li>
 
 <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="introduction.html">
+  Introduction
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="networks.html">
+  Network Definitions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="fueltechs.html">
+  Fueltechs
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="opennem/opennem.html">
-  opennem package
+  OpenNEM Package
  </a>
 </li>
 
@@ -175,13 +193,45 @@
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p>In an existing project:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install opennem
+</pre></div>
+</div>
+<p>With poetry:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ poetry add opennem
 </pre></div>
 </div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">opennem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">networks</span><span class="p">()</span>
+<span class="go">[NetworkSchema(code=&#39;WEM&#39;, country=&#39;au&#39;, label=&#39;WEM&#39;, regions=[NetworkRegionSchema(code=&#39;WEM&#39;, timezone=None)], timezone=&#39;Australia/Perth&#39;, interval_size=30),</span>
+<span class="go"> NetworkSchema(code=&#39;NEM&#39;, country=&#39;au&#39;, label=&#39;NEM&#39;, regions=[NetworkRegionSchema(code=&#39;NSW1&#39;, timezone=None), NetworkRegionSchema(code=&#39;QLD1&#39;, timezone=None), NetworkRegionSchema(code=&#39;VIC1&#39;, timezone=None), NetworkRegionSchema(code=&#39;TAS1&#39;, timezone=None), NetworkRegionSchema(code=&#39;SA1&#39;, timezone=None)], timezone=&#39;Australia/Sydney&#39;, interval_size=5)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">fueltechs</span><span class="p">()</span>
+<span class="go">[FueltechSchema(code=&#39;battery_charging&#39;, label=&#39;Battery (Charging)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;battery_discharging&#39;, label=&#39;Battery (Discharging)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;coal_black&#39;, label=&#39;Coal (Black)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;coal_brown&#39;, label=&#39;Coal (Brown)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;distillate&#39;, label=&#39;Distillate&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;gas_ccgt&#39;, label=&#39;Gas (CCGT)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;gas_ocgt&#39;, label=&#39;Gas (OCGT)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;gas_recip&#39;, label=&#39;Gas (Reciprocating)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;gas_steam&#39;, label=&#39;Gas (Steam)&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;hydro&#39;, label=&#39;Hyrdo&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;pumps&#39;, label=&#39;Pumps&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;solar_utility&#39;, label=&#39;Solar (Utility)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;solar_thermal&#39;, label=&#39;Solar (Thermal)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;solar_rooftop&#39;, label=&#39;Solar (Rooftop)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;wind&#39;, label=&#39;Wind&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;aggregator_vpp&#39;, label=&#39;Aggregator (VPP)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;aggregator_dr&#39;, label=&#39;Aggregator (Demand / Response)&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;nuclear&#39;, label=&#39;Nuclear&#39;, renewable=True),</span>
+<span class="go"> FueltechSchema(code=&#39;imports&#39;, label=&#39;Network Import&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;exports&#39;, label=&#39;Network Export&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;bioenergy_biogas&#39;, label=&#39;Biogas&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;bioenergy_biomass&#39;, label=&#39;Biomass&#39;, renewable=False),</span>
+<span class="go"> FueltechSchema(code=&#39;gas_wcmg&#39;, label=&#39;Gas (Coal Mine Waste)&#39;, renewable=False)]</span>
 </pre></div>
 </div>
 </div>
@@ -194,7 +244,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">OpenNEM Developer Documentation</a>
-    <a class='right-next' id="next-link" href="opennem/opennem.html" title="next page">opennem package</a>
+    <a class='right-next' id="next-link" href="introduction.html" title="next page">Introduction</a>
 
               </div>
               
