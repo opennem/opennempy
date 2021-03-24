@@ -22,6 +22,10 @@ babel==2.9.0; python_version >= "3.6" and python_full_version < "3.0.0" or pytho
 backcall==0.2.0; python_version >= "3.7" \
     --hash=sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255 \
     --hash=sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e
+beautifulsoup4==4.9.3; python_version >= "3.5" \
+    --hash=sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35 \
+    --hash=sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666 \
+    --hash=sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25
 black==20.8b1; python_version >= "3.6" \
     --hash=sha256:1c02557aa099101b9d21496f8a914e9ed2222ef70336404eeeac8edba836fbea
 bleach==3.3.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6" \
@@ -340,6 +344,9 @@ pydantic==1.8.1; python_full_version >= "3.6.1" \
     --hash=sha256:e8bc082afef97c5fd3903d05c6f7bb3a6af9fc18631b4cc9fedeb4720efb0c58 \
     --hash=sha256:e3f8790c47ac42549dc8b045a67b0ca371c7f66e73040d0197ce6172b385e520 \
     --hash=sha256:26cf3cb2e68ec6c0cfcb6293e69fb3450c5fd1ace87f46b64f678b0d29eac4c3
+pydata-sphinx-theme==0.5.1; python_version >= "3.5" \
+    --hash=sha256:367ecfb4478e7e6f45ae776a1bca8c2c436fd3d942933a6ef7f2b7e9286a9aaf \
+    --hash=sha256:38d579ae14cd0ac8c8a61e82afc405ea9cbc69cefc55db66114145e815fa016b
 pydocstyle==6.0.0; python_version >= "3.6" \
     --hash=sha256:d4449cf16d7e6709f63192146706933c7a334af7c0f083904799ccb851c50f6d \
     --hash=sha256:164befb520d851dbcf0e029681b91f4f599c62c5cd8933fd54b1bfbd50e89e1f
@@ -479,6 +486,9 @@ six==1.15.0; python_full_version >= "3.7.1" and python_version >= "3.6" and (pyt
 snowballstemmer==2.1.0; python_version >= "3.6" \
     --hash=sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2 \
     --hash=sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914
+soupsieve==2.2.1; python_version >= "3.6" \
+    --hash=sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b \
+    --hash=sha256:052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc
 sphinx-autobuild==2021.3.14; python_version >= "3.6" \
     --hash=sha256:de1ca3b66e271d2b5b5140c35034c89e47f263f2cd5db302c9217065f7443f05 \
     --hash=sha256:8fe8cbfdb75db04475232f05187c776f46f6e9e04cacf1e49ce81bdac649ccac
