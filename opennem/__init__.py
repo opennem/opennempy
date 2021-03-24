@@ -1,3 +1,7 @@
+"""
+OpenNEM Python Client Library
+
+"""
 import sys
 import warnings
 from pathlib import Path
