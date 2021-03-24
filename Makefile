@@ -24,6 +24,7 @@ watch:
 	@sphinx-autobuild --port 5001 $(SOURCEDIR) $(BUILDDIR)
 
 github:
+	@sphinx-apidoc -o source/opennem opennem
 	@make html
 	@cp -a $(BUILDDIR)/html/. $(GITHUBOUT)
 	@git add docs/

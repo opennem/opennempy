@@ -43,7 +43,32 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "classic"
+html_theme = "pydata_sphinx_theme"
+html_logo = "_static/logo.png"
+
+html_theme_options = {
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/opennem/opennempy",
+            "icon": "fab fa-github-square",
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/opennem",
+            "icon": "fab fa-twitter-square",
+        },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/opennem/",
+            "icon": "fas fa-box",
+        },
+    ],
+    "external_links": [
+        {"name": "OpenNEM", "url": "https://opennem.org.au"},
+        {"name": "OpenAPI Docs", "url": "https://api.opennem.org.au/docs"},
+    ],
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
