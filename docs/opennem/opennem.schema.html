@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opennem.schema package &#8212; OpenNEM  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1e043a052b0af929e4d8.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="opennem.settings package" href="opennem.settings.html" />
+    <link rel="prev" title="opennem.core package" href="opennem.core.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../quickstart.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="opennem.html">
+  opennem package
+ </a>
+</li>
+
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://opennem.org.au">OpenNEM<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://api.opennem.org.au/docs">OpenAPI Docs<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/opennem/opennempy" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/opennem" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/opennem/" rel="noopener" target="_blank" title="PyPI">
+            <span><i class="fas fa-box"></i></span>
+            <label class="sr-only">PyPI</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.core.html">
+   opennem.core package
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   opennem.schema package
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.settings.html">
+   opennem.settings package
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.utils.html">
+   opennem.utils package
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.core">
+   opennem.schema.core module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.dataset">
+   opennem.schema.dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.envs">
+   opennem.schema.envs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.interval">
+   opennem.schema.interval module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.network">
+   opennem.schema.network module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.period">
+   opennem.schema.period module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.stat">
+   opennem.schema.stat module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema.validators">
+   opennem.schema.validators module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.schema">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="opennem-schema-package">
+<h1>opennem.schema package<a class="headerlink" href="#opennem-schema-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opennem.schema.core">
+<span id="opennem-schema-core-module"></span><h2>opennem.schema.core module<a class="headerlink" href="#module-opennem.schema.core" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.core.BaseConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.core.</span></code><code class="sig-name descname"><span class="pre">BaseConfig</span></code><a class="headerlink" href="#opennem.schema.core.BaseConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.PropertyBaseModel" title="opennem.schema.core.PropertyBaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.PropertyBaseModel</span></code></a></p>
+<dl class="py class">
+<dt id="opennem.schema.core.BaseConfig.Config">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Config</span></code><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="opennem.schema.core.BaseConfig.Config.anystr_strip_whitespace">
+<code class="sig-name descname"><span class="pre">anystr_strip_whitespace</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config.anystr_strip_whitespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.core.BaseConfig.Config.arbitrary_types_allowed">
+<code class="sig-name descname"><span class="pre">arbitrary_types_allowed</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config.arbitrary_types_allowed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.core.BaseConfig.Config.json_encoders">
+<code class="sig-name descname"><span class="pre">json_encoders</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config.json_encoders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.core.BaseConfig.Config.orm_mode">
+<code class="sig-name descname"><span class="pre">orm_mode</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config.orm_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.core.BaseConfig.Config.validate_assignment">
+<code class="sig-name descname"><span class="pre">validate_assignment</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#opennem.schema.core.BaseConfig.Config.validate_assignment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.core.PropertyBaseModel">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.core.</span></code><code class="sig-name descname"><span class="pre">PropertyBaseModel</span></code><a class="headerlink" href="#opennem.schema.core.PropertyBaseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<p>Workaround for serializing properties with pydantic until
+<a class="reference external" href="https://github.com/samuelcolvin/pydantic/issues/935">https://github.com/samuelcolvin/pydantic/issues/935</a>
+is solved</p>
+<dl class="py method">
+<dt id="opennem.schema.core.PropertyBaseModel.dict">
+<code class="sig-name descname"><span class="pre">dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><a class="headerlink" href="#opennem.schema.core.PropertyBaseModel.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.core.PropertyBaseModel.get_properties">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">get_properties</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.core.PropertyBaseModel.get_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.dataset">
+<span id="opennem-schema-dataset-module"></span><h2>opennem.schema.dataset module<a class="headerlink" href="#module-opennem.schema.dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.dataset.OpennemData">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.dataset.</span></code><code class="sig-name descname"><span class="pre">OpennemData</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fuel_tech</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.interval.TimeInterval" title="opennem.schema.interval.TimeInterval"><span class="pre">opennem.schema.interval.TimeInterval</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.period.TimePeriod" title="opennem.schema.period.TimePeriod"><span class="pre">opennem.schema.period.TimePeriod</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">history</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_capacity_at_present</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.dataset.OpennemData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.data_type">
+<code class="sig-name descname"><span class="pre">data_type</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.data_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.forecast">
+<code class="sig-name descname"><span class="pre">forecast</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.forecast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.fuel_tech">
+<code class="sig-name descname"><span class="pre">fuel_tech</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.fuel_tech" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.history">
+<code class="sig-name descname"><span class="pre">history</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.id">
+<code class="sig-name descname"><span class="pre">id</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.interval">
+<code class="sig-name descname"><span class="pre">interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.interval.TimeInterval" title="opennem.schema.interval.TimeInterval"><span class="pre">opennem.schema.interval.TimeInterval</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.network">
+<code class="sig-name descname"><span class="pre">network</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.period">
+<code class="sig-name descname"><span class="pre">period</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.period.TimePeriod" title="opennem.schema.period.TimePeriod"><span class="pre">opennem.schema.period.TimePeriod</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.region">
+<code class="sig-name descname"><span class="pre">region</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.region" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.type">
+<code class="sig-name descname"><span class="pre">type</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.units">
+<code class="sig-name descname"><span class="pre">units</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemData.x_capacity_at_present">
+<code class="sig-name descname"><span class="pre">x_capacity_at_present</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.x_capacity_at_present" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.dataset.OpennemDataHistory">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.dataset.</span></code><code class="sig-name descname"><span class="pre">OpennemDataHistory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataHistory.data">
+<code class="sig-name descname"><span class="pre">data</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataHistory.interval">
+<code class="sig-name descname"><span class="pre">interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataHistory.last">
+<code class="sig-name descname"><span class="pre">last</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.last" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataHistory.start">
+<code class="sig-name descname"><span class="pre">start</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataHistory.values">
+<code class="sig-name descname"><span class="pre">values</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.dataset.OpennemDataSet">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.dataset.</span></code><code class="sig-name descname"><span class="pre">OpennemDataSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemData" title="opennem.schema.dataset.OpennemData"><span class="pre">opennem.schema.dataset.OpennemData</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.created_at">
+<code class="sig-name descname"><span class="pre">created_at</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.data">
+<code class="sig-name descname"><span class="pre">data</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemData" title="opennem.schema.dataset.OpennemData"><span class="pre">opennem.schema.dataset.OpennemData</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_by_network_id">
+<code class="sig-name descname"><span class="pre">get_by_network_id</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#opennem.schema.dataset.OpennemDataSet" title="opennem.schema.dataset.OpennemDataSet"><span class="pre">opennem.schema.dataset.OpennemDataSet</span></a><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_by_network_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_by_network_region">
+<code class="sig-name descname"><span class="pre">get_by_network_region</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#opennem.schema.dataset.OpennemDataSet" title="opennem.schema.dataset.OpennemDataSet"><span class="pre">opennem.schema.dataset.OpennemDataSet</span></a><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_by_network_region" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_by_stat_type">
+<code class="sig-name descname"><span class="pre">get_by_stat_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.stat.StatType" title="opennem.schema.stat.StatType"><span class="pre">opennem.schema.stat.StatType</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#opennem.schema.dataset.OpennemDataSet" title="opennem.schema.dataset.OpennemDataSet"><span class="pre">opennem.schema.dataset.OpennemDataSet</span></a><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_by_stat_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_by_year">
+<code class="sig-name descname"><span class="pre">get_by_year</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#opennem.schema.dataset.OpennemDataSet" title="opennem.schema.dataset.OpennemDataSet"><span class="pre">opennem.schema.dataset.OpennemDataSet</span></a><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_by_year" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_by_years">
+<code class="sig-name descname"><span class="pre">get_by_years</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">years</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#opennem.schema.dataset.OpennemDataSet" title="opennem.schema.dataset.OpennemDataSet"><span class="pre">opennem.schema.dataset.OpennemDataSet</span></a><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_by_years" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.schema.dataset.OpennemDataSet.get_id">
+<code class="sig-name descname"><span class="pre">get_id</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemData" title="opennem.schema.dataset.OpennemData"><span class="pre">opennem.schema.dataset.OpennemData</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.get_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.network">
+<code class="sig-name descname"><span class="pre">network</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.region">
+<code class="sig-name descname"><span class="pre">region</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.region" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.type">
+<code class="sig-name descname"><span class="pre">type</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.dataset.OpennemDataSet.version">
+<code class="sig-name descname"><span class="pre">version</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.envs">
+<span id="opennem-schema-envs-module"></span><h2>opennem.schema.envs module<a class="headerlink" href="#module-opennem.schema.envs" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.envs.Environment">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.envs.</span></code><code class="sig-name descname"><span class="pre">Environment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.envs.Environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="opennem.schema.envs.Environment.development">
+<code class="sig-name descname"><span class="pre">development</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'dev'</span></em><a class="headerlink" href="#opennem.schema.envs.Environment.development" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.envs.Environment.local">
+<code class="sig-name descname"><span class="pre">local</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'local'</span></em><a class="headerlink" href="#opennem.schema.envs.Environment.local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.envs.Environment.production">
+<code class="sig-name descname"><span class="pre">production</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'production'</span></em><a class="headerlink" href="#opennem.schema.envs.Environment.production" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.envs.Environment.staging">
+<code class="sig-name descname"><span class="pre">staging</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'staging'</span></em><a class="headerlink" href="#opennem.schema.envs.Environment.staging" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.interval">
+<span id="opennem-schema-interval-module"></span><h2>opennem.schema.interval module<a class="headerlink" href="#module-opennem.schema.interval" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.interval.TimeInterval">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.interval.</span></code><code class="sig-name descname"><span class="pre">TimeInterval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">human</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.interval.TimeInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.interval.TimeInterval.human">
+<code class="sig-name descname"><span class="pre">human</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.interval.TimeInterval.human" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.interval.TimeInterval.interval">
+<code class="sig-name descname"><span class="pre">interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#opennem.schema.interval.TimeInterval.interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.network">
+<span id="opennem-schema-network-module"></span><h2>opennem.schema.network module<a class="headerlink" href="#module-opennem.schema.network" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.network.FacilityStatusSchema">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.network.</span></code><code class="sig-name descname"><span class="pre">FacilityStatusSchema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.network.FacilityStatusSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.network.FacilityStatusSchema.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.FacilityStatusSchema.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.FacilityStatusSchema.label">
+<code class="sig-name descname"><span class="pre">label</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.FacilityStatusSchema.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.network.FueltechSchema">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.network.</span></code><code class="sig-name descname"><span class="pre">FueltechSchema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renewable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.network.FueltechSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.network.FueltechSchema.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.FueltechSchema.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.FueltechSchema.label">
+<code class="sig-name descname"><span class="pre">label</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.FueltechSchema.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.FueltechSchema.renewable">
+<code class="sig-name descname"><span class="pre">renewable</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#opennem.schema.network.FueltechSchema.renewable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.network.NetworkRegionSchema">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.network.</span></code><code class="sig-name descname"><span class="pre">NetworkRegionSchema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.network.NetworkRegionSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<p>Defines a network region</p>
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkRegionSchema.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.NetworkRegionSchema.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkRegionSchema.timezone">
+<code class="sig-name descname"><span class="pre">timezone</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.network.NetworkRegionSchema.timezone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.schema.network.NetworkSchema">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.network.</span></code><code class="sig-name descname"><span class="pre">NetworkSchema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.network.NetworkRegionSchema" title="opennem.schema.network.NetworkRegionSchema"><span class="pre">opennem.schema.network.NetworkRegionSchema</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.network.NetworkSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<p>Defines a network</p>
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.code">
+<code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.country">
+<code class="sig-name descname"><span class="pre">country</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.country" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.interval_size">
+<code class="sig-name descname"><span class="pre">interval_size</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.interval_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.label">
+<code class="sig-name descname"><span class="pre">label</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.regions">
+<code class="sig-name descname"><span class="pre">regions</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.network.NetworkRegionSchema" title="opennem.schema.network.NetworkRegionSchema"><span class="pre">opennem.schema.network.NetworkRegionSchema</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.regions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.network.NetworkSchema.timezone">
+<code class="sig-name descname"><span class="pre">timezone</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.network.NetworkSchema.timezone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.period">
+<span id="opennem-schema-period-module"></span><h2>opennem.schema.period module<a class="headerlink" href="#module-opennem.schema.period" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.period.TimePeriod">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.period.</span></code><code class="sig-name descname"><span class="pre">TimePeriod</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">human</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.period.TimePeriod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="opennem.schema.period.TimePeriod.human">
+<code class="sig-name descname"><span class="pre">human</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.schema.period.TimePeriod.human" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.period.TimePeriod.period">
+<code class="sig-name descname"><span class="pre">period</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#opennem.schema.period.TimePeriod.period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.stat">
+<span id="opennem-schema-stat-module"></span><h2>opennem.schema.stat module<a class="headerlink" href="#module-opennem.schema.stat" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opennem.schema.stat.StatType">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.stat.</span></code><code class="sig-name descname"><span class="pre">StatType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.stat.StatType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="opennem.schema.stat.StatType.energy">
+<code class="sig-name descname"><span class="pre">energy</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'energy'</span></em><a class="headerlink" href="#opennem.schema.stat.StatType.energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.stat.StatType.gov">
+<code class="sig-name descname"><span class="pre">gov</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'gov'</span></em><a class="headerlink" href="#opennem.schema.stat.StatType.gov" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.stat.StatType.interchange">
+<code class="sig-name descname"><span class="pre">interchange</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'interchange'</span></em><a class="headerlink" href="#opennem.schema.stat.StatType.interchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="opennem.schema.stat.StatType.power">
+<code class="sig-name descname"><span class="pre">power</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'power'</span></em><a class="headerlink" href="#opennem.schema.stat.StatType.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema.validators">
+<span id="opennem-schema-validators-module"></span><h2>opennem.schema.validators module<a class="headerlink" href="#module-opennem.schema.validators" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="opennem.schema.validators.chop_microseconds">
+<code class="sig-prename descclassname"><span class="pre">opennem.schema.validators.</span></code><code class="sig-name descname"><span class="pre">chop_microseconds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">datetime.datetime</span><a class="headerlink" href="#opennem.schema.validators.chop_microseconds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opennem.schema.validators.data_validate">
+<code class="sig-prename descclassname"><span class="pre">opennem.schema.validators.</span></code><code class="sig-name descname"><span class="pre">data_validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">decimal.Decimal</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.validators.data_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate and format list of numeric data values</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opennem.schema.validators.number_output">
+<code class="sig-prename descclassname"><span class="pre">opennem.schema.validators.</span></code><code class="sig-name descname"><span class="pre">number_output</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">decimal.Decimal</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.validators.number_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format numbers for data series outputs</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opennem.schema.validators.optionally_parse_string_datetime">
+<code class="sig-prename descclassname"><span class="pre">opennem.schema.validators.</span></code><code class="sig-name descname"><span class="pre">optionally_parse_string_datetime</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.date</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.date</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.validators.optionally_parse_string_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opennem.schema.validators.optionaly_lowercase_string">
+<code class="sig-prename descclassname"><span class="pre">opennem.schema.validators.</span></code><code class="sig-name descname"><span class="pre">optionaly_lowercase_string</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#opennem.schema.validators.optionaly_lowercase_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read from settings if we want output schema string
+values to be lowercased or not and perform</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem.schema">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opennem.schema" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="opennem.core.html" title="previous page">opennem.core package</a>
+    <a class='right-next' id="next-link" href="opennem.settings.html" title="next page">opennem.settings package</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.1e043a052b0af929e4d8.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, OpenNEM.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

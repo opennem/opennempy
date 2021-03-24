@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opennem package &#8212; OpenNEM  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1e043a052b0af929e4d8.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="opennem.core package" href="opennem.core.html" />
+    <link rel="prev" title="Getting Started" href="../quickstart.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../quickstart.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  opennem package
+ </a>
+</li>
+
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://opennem.org.au">OpenNEM<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://api.opennem.org.au/docs">OpenAPI Docs<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/opennem/opennempy" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/opennem" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/opennem/" rel="noopener" target="_blank" title="PyPI">
+            <span><i class="fas fa-box"></i></span>
+            <label class="sr-only">PyPI</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.core.html">
+   opennem.core package
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.schema.html">
+   opennem.schema package
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.settings.html">
+   opennem.settings package
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="opennem.utils.html">
+   opennem.utils package
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subpackages">
+   Subpackages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.cli">
+   opennem.cli module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem.client">
+   opennem.client module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-opennem">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="opennem-package">
+<h1>opennem package<a class="headerlink" href="#opennem-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="opennem.core.html">opennem.core package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.datas">opennem.core.datas module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.endpoint">opennem.core.endpoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.environment">opennem.core.environment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.intervals">opennem.core.intervals module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.offsets">opennem.core.offsets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core.periods">opennem.core.periods module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.core.html#module-opennem.core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opennem.schema.html">opennem.schema package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.core">opennem.schema.core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.dataset">opennem.schema.dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.envs">opennem.schema.envs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.interval">opennem.schema.interval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.network">opennem.schema.network module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.period">opennem.schema.period module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.stat">opennem.schema.stat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema.validators">opennem.schema.validators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.schema.html#module-opennem.schema">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opennem.settings.html">opennem.settings package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opennem.settings.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.settings.html#module-opennem.settings.log">opennem.settings.log module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.settings.html#module-opennem.settings.schema">opennem.settings.schema module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.settings.html#module-opennem.settings.utils">opennem.settings.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.settings.html#module-opennem.settings">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opennem.utils.html">opennem.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opennem.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.utils.html#module-opennem.utils.http">opennem.utils.http module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.utils.html#module-opennem.utils.version">opennem.utils.version module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opennem.utils.html#module-opennem.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opennem.cli">
+<span id="opennem-cli-module"></span><h2>opennem.cli module<a class="headerlink" href="#module-opennem.cli" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opennem.client">
+<span id="opennem-client-module"></span><h2>opennem.client module<a class="headerlink" href="#module-opennem.client" title="Permalink to this headline">¶</a></h2>
+<p>OpenNEM API Client Library</p>
+<dl class="py class">
+<dt id="opennem.client.OpenNEMClient">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.client.</span></code><code class="sig-name descname"><span class="pre">OpenNEMClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.client.OpenNEMClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>OpenNEM Core API Client</p>
+<dl class="py attribute">
+<dt id="opennem.client.OpenNEMClient.base_url">
+<code class="sig-name descname"><span class="pre">base_url</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#opennem.client.OpenNEMClient.base_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opennem.client.OpenNEMClient.fueltechs">
+<code class="sig-name descname"><span class="pre">fueltechs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.FueltechSchema" title="opennem.schema.network.FueltechSchema"><span class="pre">opennem.schema.network.FueltechSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.fueltechs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return fueltechs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opennem.client.OpenNEMClient.network_regions">
+<code class="sig-name descname"><span class="pre">network_regions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.NetworkSchema" title="opennem.schema.network.NetworkSchema"><span class="pre">opennem.schema.network.NetworkSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.network_regions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return network regions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opennem.client.OpenNEMClient.networks">
+<code class="sig-name descname"><span class="pre">networks</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opennem.schema.html#opennem.schema.network.NetworkSchema" title="opennem.schema.network.NetworkSchema"><span class="pre">opennem.schema.network.NetworkSchema</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.client.OpenNEMClient.networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return networks.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opennem.client.OpenNEMStats">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.client.</span></code><code class="sig-name descname"><span class="pre">OpenNEMStats</span></code><a class="headerlink" href="#opennem.client.OpenNEMStats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>OpenNEM Stats Client.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opennem">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opennem" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../quickstart.html" title="previous page">Getting Started</a>
+    <a class='right-next' id="next-link" href="opennem.core.html" title="next page">opennem.core package</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.1e043a052b0af929e4d8.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, OpenNEM.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
