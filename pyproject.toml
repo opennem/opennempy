@@ -50,12 +50,13 @@ py-spy = "^0.3.3"
 pytest-benchmark = {extras = ["histogram"], version = "^3.2.3"}
 pdbpp = "^0.10.2"
 pytest-sugar = "^0.9.4"
-Sphinx = "^3.5.3"
 myst-parser = "^0.13.5"
 pydocstyle = "^6.0.0"
 sphinx-autobuild = "^2021.3.14"
 pydata-sphinx-theme = "^0.5.1"
 snooty = "^0.8.2-alpha.0"
+Sphinx = "^3.5.3"
+rstcheck = "^3.3.1"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
