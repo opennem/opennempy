@@ -2,7 +2,7 @@
 name = "opennem"
 version = "3.7.0-beta.7"
 description = "OpenNEM Australian Energy Data Python Client"
-authors = ["Dylan McConnell <dylan.mcconnell@unimelb.edu.au>", "Nik Cubrilovic <nik@infotorch.org>"]
+authors = ["Nik Cubrilovic <nik@infotorch.org>", "Dylan McConnell <dylan.mcconnell@unimelb.edu.au>"]
 license = "MIT"
 
 readme = "README.md"
@@ -10,11 +10,12 @@ readme = "README.md"
 homepage = "https://opennem.org.au"
 repository = "https://github.com/opennem/opennempy"
 
-keywords = ["opennem", "analysis", "australia"]
+keywords = ["opennem", "analysis", "energy", "data", "electricity", "australia"]
 
 classifiers = [
   "Development Status :: 4 - Beta",
   "Environment :: Console",
+  "Environment :: Library",
   "License :: OSI Approved :: MIT License",
 ]
 
@@ -30,7 +31,7 @@ requests_cache = "^0.5.2"
 python-dateutil = "^2.8.1"
 python-dotenv = "^0.15.0"
 pandas = "^1.2.2"
-PyYAML = "^5.4.1"
+PyYAML = "^5.3"
 tomlkit = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
@@ -54,6 +55,7 @@ myst-parser = "^0.13.5"
 pydocstyle = "^6.0.0"
 sphinx-autobuild = "^2021.3.14"
 pydata-sphinx-theme = "^0.5.1"
+snooty = "^0.8.2-alpha.0"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
