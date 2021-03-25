@@ -57,6 +57,7 @@ pydata-sphinx-theme = "^0.5.1"
 snooty = "^0.8.2-alpha.0"
 Sphinx = "^3.5.3"
 rstcheck = "^3.3.1"
+sphinx-rtd-theme = "^0.5.1"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
