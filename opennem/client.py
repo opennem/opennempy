@@ -1,5 +1,4 @@
-"""
-OpenNEM API Client Library.
+"""OpenNEM API Client Library.
 
 Define the primary API client class for accessing API and data methods of OpenNEM.
 """
@@ -24,14 +23,15 @@ class OpenNEMStats(object):
 
 
 class OpenNEMClient(object):
-    """OpenNEM Core API Client.
+    """
+    OpenNEM Core API Client.
 
     Access API endpoints with an instance of the API client
 
-    ```python
-    >>> client = OpenNEMClient()
-    >>> networks = client.networks()
-    ```
+    .. code:: python
+        >>> client = OpenNEMClient()
+        >>> networks = client.networks()
+        ...
     """
 
     _base_url: str
@@ -39,7 +39,12 @@ class OpenNEMClient(object):
     _base_url_parsed: ParseResult
 
     def __init__(self, base_url: str = None):
-        """Initialize a client object."""
+        """
+        Initialize API client with optional paramters.
+
+        :param base_url: The base API endpoint to access, defaults to None
+        :type base_url: str, optional
+        """
         env = get_environment(settings.env)
 
         if base_url:
@@ -50,15 +55,32 @@ class OpenNEMClient(object):
         self._base_url_parsed = urlparse(self._base_url)
 
     def _get_endpoint(self, endpoint: str) -> str:
-        """Get the endpoint url path."""
+        """
+        Get the endpoint URI for an endpoint.
+
+        :param endpoint: Path portion of API endpoint
+        :type endpoint: str
+        :return: Complete API URI
+        :rtype: str
+        """
         return self._base_url_parsed._replace(path=endpoint).geturl()
 
     def _get(self, endpoint: str, params: Optional[Dict] = None) -> Union[Dict, List]:
-        """Perform a get request to an endpoint optionally with parameters for querystring."""
+        """
+        Perform an GET request to an endpoint optionally with parameters for querystring.
+
+        :param endpoint: Endpoint path
+        :type endpoint: str
+        :param params: Query string parameters, defaults to None
+        :type params: Optional[Dict], optional
+        :raises Exception: [description]
+        :return: JSON response
+        :rtype: Union[Dict, List]
+        """
         url = self._get_endpoint(endpoint)
         resp = http.get(url, params=params)
 
-        logger.debug("Fetching: %s => %d", resp.url, resp.status_code)
+        logger.debug("GET [%d] %s", resp.status_code, resp.url)
 
         if not resp.ok:
             raise Exception("Error from API: {}".format(resp.status_code))
