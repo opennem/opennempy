@@ -96,7 +96,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../settings.html">Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../schemas/schemas.html">Schemas</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../schemas/schemas.html">Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/networks.html">Network Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/networks.html#networks">Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/networks.html#network-region">Network Region</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/fueltechs.html">Fueltechs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/fueltechs.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/fueltechs.html#exmples">Exmples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -286,10 +296,18 @@ is solved</p>
 </div>
 <div class="section" id="module-opennem.schema.dataset">
 <span id="opennem-schema-dataset-module"></span><h2>opennem.schema.dataset module<a class="headerlink" href="#module-opennem.schema.dataset" title="Permalink to this headline">¶</a></h2>
+<p>OpenNEM Stat Data Schemas.</p>
+<p>These schemas define the format data is returned in.</p>
 <dl class="py class">
 <dt id="opennem.schema.dataset.OpennemData">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.dataset.</span></code><code class="sig-name descname"><span class="pre">OpennemData</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fuel_tech</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.interval.TimeInterval" title="opennem.schema.interval.TimeInterval"><span class="pre">opennem.schema.interval.TimeInterval</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.period.TimePeriod" title="opennem.schema.period.TimePeriod"><span class="pre">opennem.schema.period.TimePeriod</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">history</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_capacity_at_present</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.dataset.OpennemData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>BaseConfig</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemData.code">
 <code class="sig-name descname"><span class="pre">code</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.code" title="Permalink to this definition">¶</a></dt>
@@ -361,6 +379,15 @@ is solved</p>
 <dt id="opennem.schema.dataset.OpennemDataHistory">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">opennem.schema.dataset.</span></code><code class="sig-name descname"><span class="pre">OpennemDataHistory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#opennem.schema.core.BaseConfig" title="opennem.schema.core.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">opennem.schema.core.BaseConfig</span></code></a></p>
+<p>The start date of the data series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[description]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[type]</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataHistory.data">
 <code class="sig-name descname"><span class="pre">data</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.data" title="Permalink to this definition">¶</a></dt>
@@ -379,12 +406,30 @@ is solved</p>
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataHistory.start">
 <code class="sig-name descname"><span class="pre">start</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[description]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="opennem.schema.dataset.OpennemDataHistory.values">
 <code class="sig-name descname"><span class="pre">values</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.values" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[description]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Tuple[datetime, float]]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
