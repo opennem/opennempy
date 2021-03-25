@@ -8,6 +8,7 @@ from urllib.parse import ParseResult, urlparse
 
 from opennem.core.endpoint import EndpointType, get_opennem_endpoint
 from opennem.core.environment import get_environment
+from opennem.schema.dataset import OpennemDataSet
 from opennem.schema.network import FueltechSchema, NetworkRegionSchema, NetworkSchema
 from opennem.settings import settings
 from opennem.utils.http import http
@@ -110,3 +111,13 @@ class OpenNEMClient(object):
         resp_objects = [FueltechSchema(**i) for i in resp]
 
         return resp_objects
+
+    def emission_factors(self, network_id: str) -> OpennemDataSet:
+        resp = self._get(f"/stats/emissionfactor/network/NEM")
+
+        if not isinstance(resp, Dict):
+            raise Exception("Bad response type")
+
+        resp_object = OpennemDataSet(**resp)
+
+        return resp_object
