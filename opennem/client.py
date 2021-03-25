@@ -112,8 +112,38 @@ class OpenNEMClient(object):
 
         return resp_objects
 
+    def power_network_fueltech(self, network_id: str, network_region_code: str) -> OpennemDataSet:
+        """
+        Get last 7 days of power generation per fueltech.
+
+        :param network_id: The network code
+        :type network_id: str
+        :param network_region_code: The network region code
+        :type network_id: str
+        :raises Exception: Base response
+        :return: The data set in OpenNEM Data Set format.
+        :rtype: OpennemDataSet
+        """
+        resp = self._get(f"/stats/power/network/fueltech/{network_id}/{network_region_code}")
+
+        if not isinstance(resp, Dict):
+            raise Exception("Bad response type")
+
+        resp_object = OpennemDataSet(**resp)
+
+        return resp_object
+
     def emission_factors(self, network_id: str) -> OpennemDataSet:
-        resp = self._get(f"/stats/emissionfactor/network/NEM")
+        """
+        Get last 7 days of 30 minute emission factors for a network.
+
+        :param network_id: The network code
+        :type network_id: str
+        :raises Exception: Base response
+        :return: The data set in OpenNEM Data Set format.
+        :rtype: OpennemDataSet
+        """
+        resp = self._get(f"/stats/emissionfactor/network/{network_id.strip().upper()}")
 
         if not isinstance(resp, Dict):
             raise Exception("Bad response type")
