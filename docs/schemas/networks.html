@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Network Definitions &mdash; OpenNEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #ece9e6" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#quickstart">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../opennem/opennem.html">OpenNEM Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.core.html">opennem.core package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.datas">opennem.core.datas module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.endpoint">opennem.core.endpoint module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.environment">opennem.core.environment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.intervals">opennem.core.intervals module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.offsets">opennem.core.offsets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.periods">opennem.core.periods module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.schema.html">opennem.schema package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.core">opennem.schema.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.dataset">opennem.schema.dataset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.envs">opennem.schema.envs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.interval">opennem.schema.interval module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.network">opennem.schema.network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.period">opennem.schema.period module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.stat">opennem.schema.stat module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.validators">opennem.schema.validators module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.settings.html">opennem.settings package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.log">opennem.settings.log module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.schema">opennem.settings.schema module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.utils">opennem.settings.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.utils.html">opennem.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils.http">opennem.utils.http module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils.version">opennem.utils.version module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem.cli">opennem.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem.client">opennem.client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenNEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Network Definitions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/schemas/networks.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-definitions">
+<h1>Network Definitions<a class="headerlink" href="#network-definitions" title="Permalink to this headline">¶</a></h1>
+<p>OpenNEM defines a network which has multiple network regions (which usually map to geopgraphic boundaries such as states or grids)</p>
+<div class="section" id="networks">
+<h2>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h2>
+<p>Supported networks are accessible via the <code class="docutils literal notranslate"><span class="pre">/networks</span></code> endpoint and <code class="docutils literal notranslate"><span class="pre">.networks()</span></code> client call.</p>
+<p>The return schema is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NetworkSchema</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Defines a network &quot;&quot;&quot;</span>
+
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">country</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="n">regions</span><span class="p">:</span> <span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">NetworkRegionSchema</span><span class="p">]]</span>
+    <span class="n">timezone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">interval_size</span><span class="p">:</span> <span class="nb">int</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="network-region">
+<h2>Network Region<a class="headerlink" href="#network-region" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NetworkRegionSchema</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Defines a network region &quot;&quot;&quot;</span>
+
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">timezone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Network region timezone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, OpenNEM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

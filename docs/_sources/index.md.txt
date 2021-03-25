@@ -15,9 +15,9 @@ OpenAPI documentation at [https://api.opennem.org.au/docs](https://api.opennem.o
 
 Currently supported electricity networks:
 
-* [Australia NEM](https://www.nemweb.com.au/)
-* [Australia WEM (West Australia)](http://data.wa.aemo.com.au/)
-* [APVI](https://apvi.org.au) - Rooftop solar data for Australia
+* `NEM` - [Australia NEM](https://www.nemweb.com.au/)
+* `WEM` - [Australia WEM (West Australia)](http://data.wa.aemo.com.au/)
+* `APVI` - [APVI](https://apvi.org.au) - Rooftop solar data for Australia
 
 ## Contents
 
@@ -26,8 +26,8 @@ Currently supported electricity networks:
 
 quickstart
 introduction
-networks
-fueltechs
+settings
+schemas/schemas
 ```
 
 ## Module Documentation
