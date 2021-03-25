@@ -7,6 +7,16 @@ SUPPORTED_LOG_LEVEL_NAMES = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
 
 
 class OpennemSettings(BaseSettings):
+    """
+    OpenNEMSettings Schema
+
+    :param BaseSettings: Pydantic base settings
+    :type BaseSettings: [type]
+    :raises Exception: [description]
+    :return: [description]
+    :rtype: [type]
+    """
+
     env: str = "development"
 
     endpoint: Optional[str]
@@ -49,7 +59,7 @@ class OpennemSettings(BaseSettings):
 
     class Config:
         fields = {
-            "env": {"env": "ENV"},
+            "env": {"env": "OPENNEM_ENV"},
             "endpoint": {"env": "OPENNEM_API_ENDPOINT"},
-            "log_level": {"env": "LOG_LEVEL"},
+            "log_level": {"env": "OPENMEM_LOG_LEVEL"},
         }
