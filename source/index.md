@@ -3,6 +3,11 @@
 ![PyPI](https://img.shields.io/pypi/v/opennem) ![PyPI - License](https://img.shields.io/pypi/l/opennem)
 
 
+```{warning}
+OpenNEM v3 is still in _release candidate_ stage and all data has not been vetted and is still under active development.
+```
+
+
 The OpenNEM project aims to make the wealth of public National Electricity Market (NEM) data more accessible to a wider audience through a website portal and data access API's and tools.
 
 This client library for Python enables accessing the Opennem API and data sets.
