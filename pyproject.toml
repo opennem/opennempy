@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "opennem"
-version = "3.7.0-beta.9"
+version = "3.7.0-beta.10"
 description = "OpenNEM Australian Energy Data Python Client"
 authors = ["Nik Cubrilovic <nik@infotorch.org>", "Dylan McConnell <dylan.mcconnell@unimelb.edu.au>"]
 license = "MIT"
@@ -24,38 +24,36 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-requests = "^2.23.0"
+requests = "^2.25.1"
 pydantic = "^1.5.1"
 click = "^7.1.2"
 requests_cache = "^0.5.2"
 python-dateutil = "^2.8.1"
 python-dotenv = "^0.15.0"
-PyYAML = "^5.3"
+PyYAML = "^5.4.1"
 tomlkit = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
-black = "^20.8b1"
+black = "^21.4b2"
 flake8 = "^3.7.8"
 isort = "^5.6.4"
 pylint = "^2.2"
-rope = "^0.18.0"
-twine = "^3.1.1"
+rope = "^0.19.0"
 ipython = "^7.15.0"
 pytest = "^6.1.2"
 pytest-watch = "^4.2.0"
-mypy = "^0.790"
+mypy = "^0.812"
 pycodestyle = "^2.6.0"
-py-spy = "^0.3.3"
 pytest-benchmark = {extras = ["histogram"], version = "^3.2.3"}
 pdbpp = "^0.10.2"
 pytest-sugar = "^0.9.4"
 myst-parser = "^0.13.5"
 pydocstyle = "^6.0.0"
 sphinx-autobuild = "^2021.3.14"
-snooty = "^0.8.2-alpha.0"
 Sphinx = "^3.5.3"
 rstcheck = "^3.3.1"
 sphinx-rtd-theme = "^0.5.1"
+watchdog = "^2.0.3"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
