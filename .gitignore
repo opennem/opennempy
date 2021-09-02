@@ -1,15 +1,57 @@
+# python ignores
 *.pyc
-config.ini
-.ipynb_checkpoints/
-build/
-dist/.pytest_cache/
 *.log
+
+# distribution builds
+dist/.pytest_cache/
 dist/
+
+# ignore the local bin folder
 bin/
+
+# environment files
 .env
 .env.*
+.envrc
+
+# build folders from docs
 _build/
+build/
 
 # python virtual environments
 .venv/
 .venv
+
+# todo files
+TODO
+TODO.md
+
+# netbeans idea project
+.idea/
+
+# scripts we don't want commited
+scripts/run_query.py
+scripts/run_export.py
+scripts/wind_diff.py
+
+# notebooks @NOTE you can force commit anything we want in here
+notebooks/data/
+*.ipynb
+.ipynb_checkpoints
+notebooks/*.csv
+opennem/data/mms_stations.json
+notebooks/dmc_emissions.py
+
+# iPython config and profiles
+.ipython/profile_default/log
+.ipython/profile_default/pid
+.ipython/profile_default/history.sqlite
+
+# This is the venv used for notebooks
+# see requirements_notebook.txt
+.venv_notebooks/
+
+# jupyter local config ignores
+.jupyter/migrated
+.jupyter/jupyter_notebook_config.original.py
+    ~/Dropbox/Projects/Opennem/opennempy  
