@@ -8,7 +8,9 @@ This client library for Python enables accessing the Opennem API and data sets.
 
 Project homepage at https://opennem.org.au
 
-Currently supports:
+Developer documentation at https://developers.opennem.org.au/
+
+Currently supporting the following energy networks:
 
 - Australia NEM: https://www.nemweb.com.au/
 - Australia WEM (West Australia): http://data.wa.aemo.com.au/
