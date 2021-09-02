@@ -2,7 +2,7 @@
 name = "opennem"
 version = "3.7.2"
 description = "OpenNEM Australian Energy Data Python Client"
-authors = ["Nik Cubrilovic <nik@infotorch.org>"]
+authors = ["Nik Cubrilovic <nik@infotorch.org>", "Dylan McConnell <dylan.mcconnell@unimelb.edu.au>"]
 license = "MIT"
 
 readme = "README.md"
