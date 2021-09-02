@@ -152,3 +152,5 @@ We can use a Jupyter notebook by adding it as a dependancy to the project and st
 $ pip install jupyter
 $ jupyter notebook
 ```
+
+There is a local `.jupyter` config that will setup a profile to run a notebook and includes an example notebook in `notebooks/`
