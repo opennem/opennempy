@@ -28,7 +28,7 @@ poetry export --format requirements.txt > requirements.txt
 poetry export --format requirements.txt --dev > requirements-dev.txt
 
 git add pyproject.toml requirements.txt
-git ci -m "v$VERSION"
+git diff-index --quiet HEAD || git commit -m "v$VERSION"
 
 git tag v$VERSION
 git push -u origin master v$VERSION
