@@ -15,9 +15,9 @@ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statist
 poetry version ${1-prerelease}
 
 git add pyproject.toml
+VERSION=$(poetry version | sed 's/opennem\ //g')
 git commit -m "$VERSION"
 
-VERSION=$(poetry version | sed 's/opennem\ //g')
 
 # Make docs
 make github
