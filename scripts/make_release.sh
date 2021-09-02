@@ -32,7 +32,6 @@ git push -u origin master v$VERSION
 
 
 poetry build
-
-twine upload --skip-existing dist/*
+poetry publish
 
 rm -rf build
