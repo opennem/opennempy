@@ -9,3 +9,7 @@ bin/
 .env
 .env.*
 _build/
+
+# python virtual environments
+.venv/
+.venv
