@@ -1,127 +1,49 @@
 # Getting Started
 
-## 1. Requirements
+## Requirements
 
 - Python 3.8+ (see `.python-version` with `pyenv`)
-- Docker and `docker-compose` if you want to run the local dev stack
+- Docker and `docker-compose` if you want to run the local development stack with a database
 
-## 2. Quickstart
+Check if you have the correct `python` version in your shell:
+
+```sh
+$ python -V
+Python 3.9.6
+```
+
+If you require assistance setting up a local `python` environment, see the `pyenv` homepage and documentation.
+
+
+## Quickstart
+
+Install the `PyPI` module
 
 ```sh
 $ pip install opennem
 ```
 
+You can now import the module from a Python script or REPL.
+
 ```
+$ ipython
 >>> import opennem
 ```
 
-## 3. Development
+## Usage
 
-### 3.1 Auto setup and install
+The following method calls makes a live API request to the OpenNEM servers and returns a list of networks.
 
-For contributions and development of this repository you need to install all the requirements. There
-are some helper scripts in the `scripts/` folder.
-
-```sh
-$ ./scripts/init.sh
-```
-
-By default the venv is installed in the user local cache folder and not in the project path. To link the venv
-so that it can be found automatically by the shell or editors run the helper script
-
-```sh
-$ ./scripts/link_venv.sh
-Created .venv
-```
-
-### 3.2 Manual Setup
-
-#### 3.2.1 Prerequisites
-
-For MacOS and Linux require `pyenv` and `poetry`
-
- * [pyenv homepage](https://github.com/pyenv/pyenv#installation) - simple install with `brew install pyenv`
- * [poetry install](https://python-poetry.org/docs/) (don't install poetry with brew - see [this issue](https://github.com/python-poetry/poetry/issues/36))
-
-#### 3.2.2 Initialize python
-
-We use `pyenv` for python versioning as it allows a system to run multiple version of python. The version for this project is specified in the `.python-version` file in the root of the repository.
-
-To install the locally required python version
-
-```sh
-$ pyenv install `cat .python-version`
-```
-
-To initialize and use the local python version
-
-```sh
-$ pyenv version local
-3.9.6 (set by /Users/user/Projects/Opennem/opennempy/.python-version)
-```
-
-To test the install is correct
-
-```sh
-❯ python -V
-Python 3.9.6
-❯ which python
-/Users/n/.pyenv/shims/python
-```
-
-#### 3.2.3 Install with poetry
-
-To manually setup the local development environment, simply create the virtual environment, link it and setup
-the PYTHONPATH
-
-```sh
-$ poetry install
-$ ln -s `poetry env info -p` .venv
-$ source .venv/bin/activate
-$ pwd > .venv/lib/python3.9/site-packages/local.pth
-```
-
-Alternatively to actiavate the virtual environment `poetry` has a shell command:
-
-```sh
-$ poetry shell
-Spawning shell within /Users/n/Library/Caches/pypoetry/virtualenvs/opennem-pFt2SfpM-py3.9
-$ which python
-/Users/n/Library/Caches/pypoetry/virtualenvs/opennem-pFt2SfpM-py3.9/bin/python
-```
-
-#### 3.2.4 Install with venv
-
-Alternatively if you do not wish to use `poetry` you can setup a simple venv in the local folder and activate it.
-
-```sh
-$ python -m venv .venv
-$ source .venv/bin/activate
-$ pip install -r requirements.txt
-```
-
-### 3.3 Test Install
-
-You should be able to run a Python REPL (like `iPython`) and import the `opennem` module
-
-```sh
-$ ipython
-Python 3.9.6 (default, Jun 28 2021, 19:24:41)
-Type 'copyright', 'credits' or 'license' for more information
-IPython 7.23.0 -- An enhanced Interactive Python. Type '?' for help.
-
-In [1]: import opennem
-
-In [2]:
-```
-
-## 4. Usage
-
-```
+```python
 >>> import opennem
 >>> opennem.api.networks()
 [NetworkSchema(code='WEM', country='au', label='WEM', regions=[NetworkRegionSchema(code='WEM', timezone=None)], timezone='Australia/Perth', interval_size=30),
  NetworkSchema(code='NEM', country='au', label='NEM', regions=[NetworkRegionSchema(code='NSW1', timezone=None), NetworkRegionSchema(code='QLD1', timezone=None), NetworkRegionSchema(code='VIC1', timezone=None), NetworkRegionSchema(code='TAS1', timezone=None), NetworkRegionSchema(code='SA1', timezone=None)], timezone='Australia/Sydney', interval_size=5)]
+ ```
+
+ The call to `opennem.api.fueltechs` makes a live HTTP request to the OpenNEM API and returns a list of supported fueltechs in well-defined schemas.
+
+```python
 >>> opennem.api.fueltechs()
 [FueltechSchema(code='battery_charging', label='Battery (Charging)', renewable=True),
  FueltechSchema(code='battery_discharging', label='Battery (Discharging)', renewable=True),
@@ -147,3 +69,53 @@ In [2]:
  FueltechSchema(code='bioenergy_biomass', label='Biomass', renewable=False),
  FueltechSchema(code='gas_wcmg', label='Gas (Coal Mine Waste)', renewable=False)]
 ```
+
+## Example Project
+
+Guided steps for starting a client implemention of the OpenNEM library that will access the API and return data.
+
+First, create a directory for your project and enter that direcoty:
+
+```sh
+$ mkdir ~/Work/energy_data
+$ cd ~/Work/energy_data
+```
+
+Next we need to create a virtual environment for this project, where all the python requirements will be installed. This command creates a virtual environment in the project directory in a folder called `.venv`
+
+```sh
+$ python -m venv .venv
+```
+
+Before continuing, we'd like to setup this project as a `git` repository so that we can track changes and revisions while we work to develop on it.
+
+The `.venv` directory needs to be added to `.gitignore` so that it is not checked in as part of the repository. The virtual environment is local to the developers machine.
+
+```sh
+$ git init
+Initialized empty Git repository in /Users/n/Work/energy_data/.git/
+```
+
+When you check the git status, you'll see that it picks up the virtual environment `.venv` folder:
+
+```sh
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+	.venv/
+
+nothing added to commit but untracked files present
+```
+
+We do not want to commit the virtual environment to the repository so we ignore it by adding the path to a `.gitignore` file and commiting that file to the repository
+
+```sh
+$ echo ".venv" >> .gitignore
+$ git add .gitignore
+$ git commit -m "Added the venv to gitignore"
+[main 469dddd] Added the venv to gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
