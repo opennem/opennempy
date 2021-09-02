@@ -25,7 +25,7 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.25.1"
-pydantic = "^1.5.1"
+pydantic = "^1.8.2"
 click = "^7.1.2"
 requests_cache = "^0.5.2"
 python-dateutil = "^2.8.1"
