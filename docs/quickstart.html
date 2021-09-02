@@ -92,13 +92,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-project">Example Project</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">OpenNEM Client Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="schemas/schemas.html">Schemas</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="schemas/schemas.html">Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemas/networks.html">Network Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="schemas/networks.html#networks">Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schemas/networks.html#network-region">Network Region</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="schemas/fueltechs.html">Fueltechs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="schemas/fueltechs.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schemas/fueltechs.html#exmples">Exmples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server/server.html">The OpenNEM Server</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="opennem/opennem.html">OpenNEM Package</a><ul>
@@ -223,26 +236,38 @@
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Python 3.8+ (see <code class="docutils literal notranslate"><span class="pre">.python-version</span></code> with <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>)</p></li>
+<li><p>Docker and <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code> if you want to run the local development stack with a database</p></li>
 </ul>
+<p>Check if you have the correct <code class="docutils literal notranslate"><span class="pre">python</span></code> version in your shell:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python -V
+Python <span class="m">3</span>.9.6
+</pre></div>
+</div>
+<p>If you require assistance setting up a local <code class="docutils literal notranslate"><span class="pre">python</span></code> environment, see the <code class="docutils literal notranslate"><span class="pre">pyenv</span></code> homepage and documentation.</p>
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<p>In an existing project:</p>
+<p>Install the <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> module</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install opennem
 </pre></div>
 </div>
-<p>With poetry:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ poetry add opennem
+<p>You can now import the module from a Python script or REPL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
+&gt;&gt;&gt; import opennem
 </pre></div>
 </div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">opennem</span>
+<p>The following method calls makes a live API request to the OpenNEM servers and returns a list of networks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">opennem</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">networks</span><span class="p">()</span>
 <span class="go">[NetworkSchema(code=&#39;WEM&#39;, country=&#39;au&#39;, label=&#39;WEM&#39;, regions=[NetworkRegionSchema(code=&#39;WEM&#39;, timezone=None)], timezone=&#39;Australia/Perth&#39;, interval_size=30),</span>
 <span class="go"> NetworkSchema(code=&#39;NEM&#39;, country=&#39;au&#39;, label=&#39;NEM&#39;, regions=[NetworkRegionSchema(code=&#39;NSW1&#39;, timezone=None), NetworkRegionSchema(code=&#39;QLD1&#39;, timezone=None), NetworkRegionSchema(code=&#39;VIC1&#39;, timezone=None), NetworkRegionSchema(code=&#39;TAS1&#39;, timezone=None), NetworkRegionSchema(code=&#39;SA1&#39;, timezone=None)], timezone=&#39;Australia/Sydney&#39;, interval_size=5)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">fueltechs</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The call to <code class="docutils literal notranslate"><span class="pre">opennem.api.fueltechs</span></code> makes a live HTTP request to the OpenNEM API and returns a list of supported fueltechs in well-defined schemas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">opennem</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">fueltechs</span><span class="p">()</span>
 <span class="go">[FueltechSchema(code=&#39;battery_charging&#39;, label=&#39;Battery (Charging)&#39;, renewable=True),</span>
 <span class="go"> FueltechSchema(code=&#39;battery_discharging&#39;, label=&#39;Battery (Discharging)&#39;, renewable=True),</span>
 <span class="go"> FueltechSchema(code=&#39;coal_black&#39;, label=&#39;Coal (Black)&#39;, renewable=False),</span>
@@ -266,6 +291,70 @@
 <span class="go"> FueltechSchema(code=&#39;bioenergy_biogas&#39;, label=&#39;Biogas&#39;, renewable=False),</span>
 <span class="go"> FueltechSchema(code=&#39;bioenergy_biomass&#39;, label=&#39;Biomass&#39;, renewable=False),</span>
 <span class="go"> FueltechSchema(code=&#39;gas_wcmg&#39;, label=&#39;Gas (Coal Mine Waste)&#39;, renewable=False)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-project">
+<h2>Example Project<a class="headerlink" href="#example-project" title="Permalink to this headline">¶</a></h2>
+<p>Guided steps for starting a client implemention of the OpenNEM library that will access the API and return data.</p>
+<p>First, create a directory for your project and enter that direcoty:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/Work/energy_data
+$ <span class="nb">cd</span> ~/Work/energy_data
+</pre></div>
+</div>
+<p>Next we need to create a virtual environment for this project, where all the python requirements will be installed. This command creates a virtual environment in the project directory in a folder called <code class="docutils literal notranslate"><span class="pre">.venv</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python -m venv .venv
+</pre></div>
+</div>
+<p>Before continuing, we’d like to setup this project as a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository so that we can track changes and revisions while we work to develop on it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory needs to be added to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> so that it is not checked in as part of the repository. The virtual environment is local to the developers machine.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ git init
+Initialized empty Git repository <span class="k">in</span> /Users/n/Work/energy_data/.git/
+</pre></div>
+</div>
+<p>When you check the git status, you’ll see that it picks up the virtual environment <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+	.venv/
+
+nothing added to commit but untracked files present
+</pre></div>
+</div>
+<p>We do not want to commit the virtual environment to the repository so we ignore it by adding the path to a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file and commiting that file to the repository</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s2">&quot;.venv&quot;</span> &gt;&gt; .gitignore
+$ git add .gitignore
+$ git commit -m <span class="s2">&quot;Added the venv to gitignore&quot;</span>
+<span class="o">[</span>main 469dddd<span class="o">]</span> Added the venv to gitignore
+ <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+ create mode <span class="m">100644</span> test.txt
+</pre></div>
+</div>
+<p>We now have a setup virtual environment with a git repository. Next we will activate the virtual environment. You can verify that the shell has activated the virtual environment by looking at the path to the <code class="docutils literal notranslate"><span class="pre">python</span></code> binary.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> .venv/bin/activate
+$ which python
+/Users/n/Work/energy_data/.venv/bin/python
+</pre></div>
+</div>
+<p>We can now install the <code class="docutils literal notranslate"><span class="pre">opennem</span></code> client library</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install opennem
+</pre></div>
+</div>
+<p>This install might take a moment. Once done, we can use the client library in a REPL like iPython like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
+Python 3.9.6 (default, Jun 28 2021, 19:24:41)
+Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
+IPython 7.26.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+
+In [1]: import opennem
+</pre></div>
+</div>
+<p>We can use a Jupyter notebook by adding it as a dependancy to the project and starging it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install jupyter
+$ jupyter notebook
 </pre></div>
 </div>
 </div>

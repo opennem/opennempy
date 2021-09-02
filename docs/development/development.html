@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. Development &mdash; OpenNEM  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #ece9e6" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#quickstart">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#example-project">Example Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">OpenNEM Client Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schemas/schemas.html">Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/networks.html">Network Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/networks.html#networks">Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/networks.html#network-region">Network Region</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/fueltechs.html">Fueltechs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/fueltechs.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../schemas/fueltechs.html#exmples">Exmples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">The OpenNEM Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../opennem/opennem.html">OpenNEM Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.core.html">opennem.core package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.datas">opennem.core.datas module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.endpoint">opennem.core.endpoint module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.environment">opennem.core.environment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.intervals">opennem.core.intervals module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.offsets">opennem.core.offsets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core.periods">opennem.core.periods module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.core.html#module-opennem.core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.schema.html">opennem.schema package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.core">opennem.schema.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.dataset">opennem.schema.dataset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.envs">opennem.schema.envs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.interval">opennem.schema.interval module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.network">opennem.schema.network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.period">opennem.schema.period module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.stat">opennem.schema.stat module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema.validators">opennem.schema.validators module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.schema.html#module-opennem.schema">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.settings.html">opennem.settings package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.log">opennem.settings.log module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.schema">opennem.settings.schema module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings.utils">opennem.settings.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.settings.html#module-opennem.settings">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../opennem/opennem.utils.html">opennem.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils.http">opennem.utils.http module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils.version">opennem.utils.version module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../opennem/opennem.utils.html#module-opennem.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem.cli">opennem.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem.client">opennem.client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opennem/opennem.html#module-opennem">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenNEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>3. Development</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/development/development.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development">
+<h1>3. Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="auto-setup-and-install">
+<h2>3.1 Auto setup and install<a class="headerlink" href="#auto-setup-and-install" title="Permalink to this headline">¶</a></h2>
+<p>For contributions and development of this repository you need to install all the requirements. There
+are some helper scripts in the <code class="docutils literal notranslate"><span class="pre">scripts/</span></code> folder.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ./scripts/init.sh
+</pre></div>
+</div>
+<p>By default the venv is installed in the user local cache folder and not in the project path. To link the venv
+so that it can be found automatically by the shell or editors run the helper script</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ./scripts/link_venv.sh
+Created .venv
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-setup">
+<h2>3.2 Manual Setup<a class="headerlink" href="#manual-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h3>3.2.1 Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>For MacOS and Linux require <code class="docutils literal notranslate"><span class="pre">pyenv</span></code> and <code class="docutils literal notranslate"><span class="pre">poetry</span></code></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyenv/pyenv#installation">pyenv homepage</a> - simple install with <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">pyenv</span></code></p></li>
+<li><p><a class="reference external" href="https://python-poetry.org/docs/">poetry install</a> (don’t install poetry with brew - see <a class="reference external" href="https://github.com/python-poetry/poetry/issues/36">this issue</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="initialize-python">
+<h3>3.2.2 Initialize python<a class="headerlink" href="#initialize-python" title="Permalink to this headline">¶</a></h3>
+<p>We use <code class="docutils literal notranslate"><span class="pre">pyenv</span></code> for python versioning as it allows a system to run multiple version of python. The version for this project is specified in the <code class="docutils literal notranslate"><span class="pre">.python-version</span></code> file in the root of the repository.</p>
+<p>To install the locally required python version</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pyenv install <span class="sb">`</span>cat .python-version<span class="sb">`</span>
+</pre></div>
+</div>
+<p>To initialize and use the local python version</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pyenv version <span class="nb">local</span>
+<span class="m">3</span>.9.6 <span class="o">(</span><span class="nb">set</span> by /Users/user/Projects/Opennem/opennempy/.python-version<span class="o">)</span>
+</pre></div>
+</div>
+<p>To test the install is correct</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>❯ python -V
+Python <span class="m">3</span>.9.6
+❯ which python
+/Users/n/.pyenv/shims/python
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-with-poetry">
+<h3>3.2.3 Install with poetry<a class="headerlink" href="#install-with-poetry" title="Permalink to this headline">¶</a></h3>
+<p>To manually setup the local development environment, simply create the virtual environment, link it and setup
+the PYTHONPATH</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ poetry install
+$ ln -s <span class="sb">`</span>poetry env info -p<span class="sb">`</span> .venv
+$ <span class="nb">source</span> .venv/bin/activate
+$ <span class="nb">pwd</span> &gt; .venv/lib/python3.9/site-packages/local.pth
+</pre></div>
+</div>
+<p>Alternatively to actiavate the virtual environment <code class="docutils literal notranslate"><span class="pre">poetry</span></code> has a shell command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ poetry shell
+Spawning shell within /Users/n/Library/Caches/pypoetry/virtualenvs/opennem-pFt2SfpM-py3.9
+$ which python
+/Users/n/Library/Caches/pypoetry/virtualenvs/opennem-pFt2SfpM-py3.9/bin/python
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-with-venv">
+<h3>3.2.4 Install with venv<a class="headerlink" href="#install-with-venv" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively if you do not wish to use <code class="docutils literal notranslate"><span class="pre">poetry</span></code> you can setup a simple venv in the local folder and activate it.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python -m venv .venv
+$ <span class="nb">source</span> .venv/bin/activate
+$ pip install -r requirements.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="test-install">
+<h2>3.3 Test Install<a class="headerlink" href="#test-install" title="Permalink to this headline">¶</a></h2>
+<p>You should be able to run a Python REPL (like <code class="docutils literal notranslate"><span class="pre">iPython</span></code>) and import the <code class="docutils literal notranslate"><span class="pre">opennem</span></code> module</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ipython
+Python <span class="m">3</span>.9.6 <span class="o">(</span>default, Jun <span class="m">28</span> <span class="m">2021</span>, <span class="m">19</span>:24:41<span class="o">)</span>
+Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
+IPython <span class="m">7</span>.23.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: import opennem
+
+In <span class="o">[</span><span class="m">2</span><span class="o">]</span>:
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, OpenNEM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

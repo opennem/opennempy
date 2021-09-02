@@ -92,9 +92,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../quickstart.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quickstart.html#quickstart">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quickstart.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#example-project">Example Project</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">OpenNEM Client Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../settings.html">Settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../schemas/schemas.html">Schemas</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/networks.html">Network Definitions</a><ul>
@@ -109,6 +111,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">The OpenNEM Server</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="opennem.html">OpenNEM Package</a><ul class="current">
@@ -320,7 +323,7 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemData.forecast">
-<code class="sig-name descname"><span class="pre">forecast</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.forecast" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">forecast</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">OpennemDataHistory</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.forecast" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -330,7 +333,7 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemData.history">
-<code class="sig-name descname"><span class="pre">history</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">opennem.schema.dataset.OpennemDataHistory</span></a></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.history" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">history</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#opennem.schema.dataset.OpennemDataHistory" title="opennem.schema.dataset.OpennemDataHistory"><span class="pre">OpennemDataHistory</span></a></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.history" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -340,7 +343,7 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemData.interval">
-<code class="sig-name descname"><span class="pre">interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.interval.TimeInterval" title="opennem.schema.interval.TimeInterval"><span class="pre">opennem.schema.interval.TimeInterval</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.interval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TimeInterval</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.interval" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -350,7 +353,7 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemData.period">
-<code class="sig-name descname"><span class="pre">period</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.period.TimePeriod" title="opennem.schema.period.TimePeriod"><span class="pre">opennem.schema.period.TimePeriod</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.period" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">period</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">TimePeriod</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemData.period" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -400,12 +403,12 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataHistory.last">
-<code class="sig-name descname"><span class="pre">last</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.last" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">last</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.last" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataHistory.start">
-<code class="sig-name descname"><span class="pre">start</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.start" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">start</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime</span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataHistory.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>[summary]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -444,12 +447,12 @@ is solved</p>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataSet.created_at">
-<code class="sig-name descname"><span class="pre">created_at</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.created_at" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">created_at</span></code><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.created_at" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="opennem.schema.dataset.OpennemDataSet.data">
-<code class="sig-name descname"><span class="pre">data</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemData" title="opennem.schema.dataset.OpennemData"><span class="pre">opennem.schema.dataset.OpennemData</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">data</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opennem.schema.dataset.OpennemData" title="opennem.schema.dataset.OpennemData"><span class="pre">OpennemData</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opennem.schema.dataset.OpennemDataSet.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
