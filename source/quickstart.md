@@ -119,3 +119,36 @@ $ git commit -m "Added the venv to gitignore"
 [main 469dddd] Added the venv to gitignore
  1 file changed, 1 insertion(+)
  create mode 100644 test.txt
+```
+
+We now have a setup virtual environment with a git repository. Next we will activate the virtual environment. You can verify that the shell has activated the virtual environment by looking at the path to the `python` binary.
+
+```sh
+$ source .venv/bin/activate
+$ which python
+/Users/n/Work/energy_data/.venv/bin/python
+```
+
+We can now install the `opennem` client library
+
+```sh
+$ pip install opennem
+```
+
+This install might take a moment. Once done, we can use the client library in a REPL like iPython like so:
+
+```
+$ ipython
+Python 3.9.6 (default, Jun 28 2021, 19:24:41)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.26.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import opennem
+```
+
+We can use a Jupyter notebook by adding it as a dependancy to the project and starging it:
+
+```
+$ pip install jupyter
+$ jupyter notebook
+```
