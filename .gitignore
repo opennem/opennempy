@@ -34,13 +34,8 @@ scripts/run_query.py
 scripts/run_export.py
 scripts/wind_diff.py
 
-# notebooks @NOTE you can force commit anything we want in here
-notebooks/data/
-*.ipynb
+# notebook checkpoints
 .ipynb_checkpoints
-notebooks/*.csv
-opennem/data/mms_stations.json
-notebooks/dmc_emissions.py
 
 # iPython config and profiles
 .ipython/profile_default/log
