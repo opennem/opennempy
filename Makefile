@@ -28,4 +28,4 @@ github:
 	@make html
 	@cp -a $(BUILDDIR)/html/. $(GITHUBOUT)
 	@git add docs/
-	@git ci -m "AUTO: builddocs"
+	@git diff-index --quiet HEAD || git commit -m "AUTO: builddocs"
