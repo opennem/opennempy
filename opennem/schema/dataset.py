@@ -1,3 +1,8 @@
+"""
+OpenNEM Stat Data Schemas.
+
+These schemas define the format data is returned in.
+"""
 from __future__ import annotations
 
 from datetime import datetime
@@ -14,20 +19,39 @@ from opennem.schema.validators import (
     chop_microseconds,
     data_validate,
     optionally_parse_string_datetime,
-    optionaly_lowercase_string,
 )
 
 
 class OpennemDataHistory(BaseConfig):
+
+    """The start date of the data series.
+
+    :return: [description]
+    :rtype: [type]
+    """
+
     start: datetime
+
+    """[summary]
+
+    :return: [description]
+    :rtype: [type]
+    """
     last: datetime
+
     interval: str
+
     data: List
 
     # validators
     _data_valid = validator("data", allow_reuse=True, pre=True)(data_validate)
 
     def values(self) -> List[Tuple[datetime, float]]:
+        """[summary]
+
+        :return: [description]
+        :rtype: List[Tuple[datetime, float]]
+        """
         interval_obj = delta_from_human_interval(self.interval)
         inclusive = False
         dt = self.start
@@ -51,6 +75,12 @@ class OpennemDataHistory(BaseConfig):
 
 
 class OpennemData(BaseConfig):
+    """[summary]
+
+    :param BaseConfig: [description]
+    :type BaseConfig: [type]
+    """
+
     id: Optional[str]
     type: Optional[str]
     fuel_tech: Optional[str]
@@ -94,13 +124,10 @@ class OpennemDataSet(BaseConfig):
     )
 
     _created_at_trim = validator("created_at", allow_reuse=True, pre=True)(chop_microseconds)
-    _network_lowercase = validator("network", allow_reuse=True, pre=True)(
-        optionaly_lowercase_string
-    )
 
     def get_by_stat_type(self, stat_type: StatType) -> OpennemDataSet:
         em = self.copy()
-        em.data = list(filter(lambda s: s.stat_type == stat_type, self.resources))
+        em.data = list(filter(lambda s: s.data_type == stat_type, self.data))
         return em
 
     def get_by_network_id(
@@ -108,7 +135,7 @@ class OpennemDataSet(BaseConfig):
         network_id: str,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.data = list(filter(lambda s: s.network.code == network_id, self.resources))
+        em.data = list(filter(lambda s: s.network.code == network_id, self.data))
         return em
 
     def get_by_network_region(
@@ -116,7 +143,7 @@ class OpennemDataSet(BaseConfig):
         network_region: str,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.data = list(filter(lambda s: s.network_region == network_region, self.resources))
+        em.data = list(filter(lambda s: s.region == network_region, self.data))
         return em
 
     def get_by_year(
@@ -124,7 +151,7 @@ class OpennemDataSet(BaseConfig):
         year: int,
     ) -> OpennemDataSet:
         em = self.copy()
-        em.data = list(filter(lambda s: s.year == year, self.resources))
+        em.data = list(filter(lambda s: s.year == year, self.data))
         return em
 
     def get_by_years(
@@ -132,5 +159,5 @@ class OpennemDataSet(BaseConfig):
         years: List[int],
     ) -> OpennemDataSet:
         em = self.copy()
-        em.data = list(filter(lambda s: s.year in years, self.resources))
+        em.data = list(filter(lambda s: s.year in years, self.data))
         return em
