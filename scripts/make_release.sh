@@ -1,4 +1,4 @@
-set -euo pipefail
+set -euxo pipefail
 
 # Test
 pytest  --exitfirst --verbose --failed-first
@@ -14,6 +14,9 @@ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statist
 
 poetry version ${1-prerelease}
 
+git add pyproject.toml
+git commit -m "$VERSION"
+
 VERSION=$(poetry version | sed 's/opennem\ //g')
 
 # Make docs
@@ -25,7 +28,6 @@ poetry export --format requirements.txt > requirements.txt
 poetry export --format requirements.txt --dev > requirements-dev.txt
 
 git add pyproject.toml requirements.txt
-
 git ci -m "v$VERSION"
 
 git tag v$VERSION
