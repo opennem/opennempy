@@ -151,3 +151,22 @@ class OpenNEMClient(object):
         resp_object = OpennemDataSet(**resp)
 
         return resp_object
+
+    def price(self, network_id: str) -> OpennemDataSet:
+        """
+        Get price for a network.
+
+        :param network_id: The network code
+        :type network_id: str
+        :raises Exception: Base response
+        :return: The data set in OpenNEM Data Set format.
+        :rtype: OpennemDataSet
+        """
+        resp = self._get(f"/stats/price/{network_id.strip().upper()}")
+
+        if not isinstance(resp, Dict):
+            raise Exception("Bad response type")
+
+        resp_object = OpennemDataSet(**resp)
+
+        return resp_object
