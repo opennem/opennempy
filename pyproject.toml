@@ -23,37 +23,31 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 requests = "^2.25.1"
-pydantic = "^1.5.1"
-click = "^7.1.2"
-requests_cache = "^0.5.2"
+pydantic = "^1.10.2"
+click = "^8.1.3"
 python-dateutil = "^2.8.1"
-python-dotenv = "^0.15.0"
-PyYAML = "^5.4.1"
-tomlkit = "^0.7.0"
+python-dotenv = "^0.21.0"
+PyYAML = "^6.0"
+tomlkit = "^0.11.6"
 
 [tool.poetry.dev-dependencies]
-black = "^21.4b2"
-flake8 = "^3.7.8"
+black = "^22.10.0"
+flake8 = "^5.0.4"
 isort = "^5.6.4"
-pylint = "^2.2"
-rope = "^0.19.0"
-ipython = "^7.15.0"
-pytest = "^6.1.2"
+pylint = "^2.15.5"
+rope = "^1.4.0"
+pytest = "^7.2.0"
 pytest-watch = "^4.2.0"
-mypy = "^0.812"
+mypy = "^0.990"
 pycodestyle = "^2.6.0"
-pytest-benchmark = {extras = ["histogram"], version = "^3.2.3"}
-pdbpp = "^0.10.2"
 pytest-sugar = "^0.9.4"
-myst-parser = "^0.13.5"
-pydocstyle = "^6.0.0"
 sphinx-autobuild = "^2021.3.14"
-Sphinx = "^3.5.3"
-rstcheck = "^3.3.1"
-sphinx-rtd-theme = "^0.5.1"
+Sphinx = "^5.3.0"
 watchdog = "^2.0.3"
+sphinx-rtd-theme = "^1.1.1"
+ruff = "^0.0.108"
 
 [tool.poetry.scripts]
 opennem = 'opennem.cli:main'
