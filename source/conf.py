@@ -12,7 +12,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "OpenNEM"
-copyright = "2021, OpenNEM"
+copyright = "2022, OpenNEM"
 author = "OpenNEM"
 
 
@@ -40,7 +40,7 @@ html_theme_options = {
     "logo_only": True,
     "collapse_navigation": False,
     "includehidden": True,
-    "github_url": "https://github.com/opennem/opennem/py",
+    "github_url": "https://github.com/opennem/opennempy",
 }
 
 html_static_path = ["_static"]
