@@ -80,6 +80,8 @@ exclude = '''
   |\.mypy_cache
   |\.pytest_cache
   |\.tox
+  |\.jupyter
+  |\.ipython
   |\.venv
   |node_modules
   |_build
