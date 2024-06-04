@@ -44,7 +44,7 @@ OpenNEM project names and GitHub project names often do not match. For ex. the b
 
 ## Which project is for me?
 
-We are open to constributions for any of the projects. The backend is developed in Python with FastAPI, SQLAlchemy, Alembic et al. while the frontend is developed in Javascript with vue.js.
+We are open to contributions for any of the projects. The backend is developed in Python with FastAPI, SQLAlchemy, Alembic et al. while the frontend is developed in Javascript with vue.js.
 
  * `opennem-backend` (`opennem/opennem` on GitHub) is the main project and involves collecting and parsing data from numerous sources and storing it in the backend database that is made available via an api at `api.opennem.org.au`. If you are a developer or an academic that is looking to contribute additional features or data source for OpenNEM then this is likely the project you are looking for.
  * If you are a front-end developer and wish to contribute to the features currently on the website then you are likely looking for the `opennem-fe` project.
