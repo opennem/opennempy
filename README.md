@@ -1,6 +1,6 @@
 # OpenNEM Energy Market Data Access
 
-> [!ERROR]
+> [!CAUTION]
 > This project has been deprecated.
 
 This is the old OpenNEM Python client. For the updated clients see:
